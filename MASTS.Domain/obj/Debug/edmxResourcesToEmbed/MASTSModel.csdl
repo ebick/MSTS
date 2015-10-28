@@ -1,0 +1,1673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MSTSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CostProfitCenter">
+    <Key>
+      <PropertyRef Name="CostProfitCenterID" />
+    </Key>
+    <Property Name="CostProfitCenterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsCostCenter" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ManagementUnits" Relationship="Self.FK_ManagementUnit_CostProfitCenter" FromRole="CostProfitCenter" ToRole="ManagementUnit" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HeadQuartersAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HeadQuartersAddress2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HeadQuartersCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HeadQuartersState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HeadQuartersZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ClientLocationAliasTypes" Relationship="Self.FK_ClientLocationAliasType_Client" FromRole="Client" ToRole="ClientLocationAliasType" />
+    <NavigationProperty Name="ClientManagementUnits" Relationship="Self.FK_ClientManagementUnit_Client" FromRole="Client" ToRole="ClientManagementUnit" />
+  </EntityType>
+  <EntityType Name="ClientBillingEntity">
+    <Key>
+      <PropertyRef Name="ClientBillingEntityID" />
+    </Key>
+    <Property Name="ClientBillingEntityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Attention" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientManagementUnit">
+    <Key>
+      <PropertyRef Name="ClientManagementUnitID" />
+    </Key>
+    <Property Name="ClientManagementUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="ManagementUnitID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ClientManagementUnit_Client" FromRole="ClientManagementUnit" ToRole="Client" />
+    <NavigationProperty Name="ManagementUnit" Relationship="Self.FK_ClientManagementUnit_ManagementUnit" FromRole="ClientManagementUnit" ToRole="ManagementUnit" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContactType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactReferenceID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactRole" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OfficePhone" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Fax" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientLocationAliasType">
+    <Key>
+      <PropertyRef Name="ClientLocationAliasTypeID" />
+    </Key>
+    <Property Name="ClientLocationAliasTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ClientLocationAliasType_Client" FromRole="ClientLocationAliasType" ToRole="Client" />
+    <NavigationProperty Name="ClientLocationAlias" Relationship="Self.FK_ClientLocationAlias_ClientLocationAliasType" FromRole="ClientLocationAliasType" ToRole="ClientLocationAlias" />
+  </EntityType>
+  <EntityType Name="CustomField">
+    <Key>
+      <PropertyRef Name="CustomFieldID" />
+    </Key>
+    <Property Name="CustomFieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomFieldTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationTableID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UILabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsRequired" Type="Boolean" Nullable="false" />
+    <Property Name="RangeMin" Type="Int32" />
+    <Property Name="RangeMax" Type="Int32" />
+    <Property Name="DateMin" Type="DateTime" Precision="0" />
+    <Property Name="DateMax" Type="DateTime" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ApplicationTable" Relationship="Self.FK_CustomField_ApplicationTable" FromRole="CustomField" ToRole="ApplicationTable" />
+    <NavigationProperty Name="CustomFieldType" Relationship="Self.FK_CustomField_CustomFieldType" FromRole="CustomField" ToRole="CustomFieldType" />
+    <NavigationProperty Name="CustomFieldSelectionLists" Relationship="Self.FK_CustomFieldSelectionList_CustomField" FromRole="CustomField" ToRole="CustomFieldSelectionList" />
+  </EntityType>
+  <EntityType Name="CustomFieldSelectionList">
+    <Key>
+      <PropertyRef Name="CustomFieldSelectionListID" />
+    </Key>
+    <Property Name="CustomFieldSelectionListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomFieldID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomField" Relationship="Self.FK_CustomFieldSelectionList_CustomField" FromRole="CustomFieldSelectionList" ToRole="CustomField" />
+  </EntityType>
+  <EntityType Name="CustomFieldType">
+    <Key>
+      <PropertyRef Name="CustomFieldTypeID" />
+    </Key>
+    <Property Name="CustomFieldTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomFields" Relationship="Self.FK_CustomField_CustomFieldType" FromRole="CustomFieldType" ToRole="CustomField" />
+  </EntityType>
+  <EntityType Name="ManagementUnit">
+    <Key>
+      <PropertyRef Name="ManagementUnitID" />
+    </Key>
+    <Property Name="ManagementUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManagementEntityID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CostCenterID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CostProfitCenter" Relationship="Self.FK_ManagementUnit_CostProfitCenter" FromRole="ManagementUnit" ToRole="CostProfitCenter" />
+    <NavigationProperty Name="ClientManagementUnits" Relationship="Self.FK_ClientManagementUnit_ManagementUnit" FromRole="ManagementUnit" ToRole="ClientManagementUnit" />
+    <NavigationProperty Name="ManagementEntity" Relationship="MSTSModel.FK_ManagementUnit_ManagementEntity" FromRole="ManagementUnit" ToRole="ManagementEntity" />
+  </EntityType>
+  <EntityType Name="ResourceType">
+    <Key>
+      <PropertyRef Name="ResourceTypeID" />
+    </Key>
+    <Property Name="ResourceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HumanResources" Relationship="Self.FK_HumanResource_ResourceType" FromRole="ResourceType" ToRole="HumanResource" />
+  </EntityType>
+  <EntityType Name="RouteClassification">
+    <Key>
+      <PropertyRef Name="RouteClassificationID" />
+    </Key>
+    <Property Name="RouteClassificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RoutePlans" Relationship="Self.FK_RoutePlan_RouteClassification" FromRole="RouteClassification" ToRole="RoutePlan" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RoutePlans" Relationship="Self.FK_RoutePlan_VehicleType" FromRole="VehicleType" ToRole="RoutePlan" />
+  </EntityType>
+  <EntityType Name="MobileUnit">
+    <Key>
+      <PropertyRef Name="MobileUnitID" />
+    </Key>
+    <Property Name="MobileUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccessNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsPrivatelyOwned" Type="Boolean" Nullable="false" />
+    <Property Name="IsCellularCapable" Type="Boolean" Nullable="false" />
+    <Property Name="IsScanCapable" Type="Boolean" Nullable="false" />
+    <Property Name="IsPhotoCapable" Type="Boolean" Nullable="false" />
+    <Property Name="IsSignatureCaptureCapable" Type="Boolean" Nullable="false" />
+    <Property Name="YearManufactured" Type="Int32" Nullable="false" />
+    <Property Name="IsAssigned" Type="Boolean" Nullable="false" />
+    <Property Name="IsDamaged" Type="Boolean" Nullable="false" />
+    <Property Name="IsBeingRepaired" Type="Boolean" Nullable="false" />
+    <Property Name="IsUnderWarranty" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DriverMobileAssignements" Relationship="Self.FK_DriverMobileAssignement_MobileUnit" FromRole="MobileUnit" ToRole="DriverMobileAssignement" />
+  </EntityType>
+  <EntityType Name="VehicleDetail">
+    <Key>
+      <PropertyRef Name="VehicleDetailID" />
+    </Key>
+    <Property Name="VehicleDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleInsurancePolicyID" Type="Int32" />
+    <Property Name="RegistrationState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LicensePlate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegistrationExpiration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsYearRequired" Type="Boolean" Nullable="false" />
+    <Property Name="VehicleYear" Type="Int32" />
+    <Property Name="IsMakeRequired" Type="Boolean" Nullable="false" />
+    <Property Name="VehicleMake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsModelRequired" Type="Boolean" Nullable="false" />
+    <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsTrimRequired" Type="Boolean" Nullable="false" />
+    <Property Name="VehicleTrim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsMileageRequired" Type="Boolean" Nullable="false" />
+    <Property Name="VehicleMileage" Type="Int32" />
+    <Property Name="IsVehiclePriority" Type="Boolean" Nullable="false" />
+    <Property Name="IsFreeFormDetailRequired" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DriverVehicles" Relationship="Self.FK_DriverVehicle_VehicleDetail" FromRole="VehicleDetail" ToRole="DriverVehicle" />
+    <NavigationProperty Name="VehicleInsurancePolicy" Relationship="Self.FK_VehicleDetail_VehicleInsurancePolicy" FromRole="VehicleDetail" ToRole="VehicleInsurancePolicy" />
+  </EntityType>
+  <EntityType Name="VehicleInsurancePolicy">
+    <Key>
+      <PropertyRef Name="VehicleInsurancePolicyID" />
+    </Key>
+    <Property Name="VehicleInsurancePolicyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <Property Name="InsuranceCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PolicyNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OriginalEffectiveCoverageDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CurrentCoverageExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="VehicleDetails" Relationship="Self.FK_VehicleDetail_VehicleInsurancePolicy" FromRole="VehicleInsurancePolicy" ToRole="VehicleDetail" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_VehicleInsurancePolicy_Driver" FromRole="VehicleInsurancePolicy" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="ActionTrack">
+    <Key>
+      <PropertyRef Name="ActionTrackID" />
+    </Key>
+    <Property Name="ActionTrackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ActionOccurred" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ApplicationTable">
+    <Key>
+      <PropertyRef Name="ApplicationTableID" />
+    </Key>
+    <Property Name="ApplicationTableID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomFields" Relationship="Self.FK_CustomField_ApplicationTable" FromRole="ApplicationTable" ToRole="CustomField" />
+    <NavigationProperty Name="ApplicationTableFields" Relationship="Self.FK_ApplicationTableField_ApplicationTable" FromRole="ApplicationTable" ToRole="ApplicationTableField" />
+  </EntityType>
+  <EntityType Name="ApplicationTableField">
+    <Key>
+      <PropertyRef Name="ApplicationTableFieldID" />
+    </Key>
+    <Property Name="ApplicationTableFieldID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationTableID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FieldType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsAudited" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ApplicationTable" Relationship="Self.FK_ApplicationTableField_ApplicationTable" FromRole="ApplicationTableField" ToRole="ApplicationTable" />
+    <NavigationProperty Name="ChangeLogs" Relationship="Self.FK_ChangeLog_ApplicationTableField" FromRole="ApplicationTableField" ToRole="ChangeLog" />
+  </EntityType>
+  <EntityType Name="ChangeLog">
+    <Key>
+      <PropertyRef Name="ChangeLogID" />
+    </Key>
+    <Property Name="ChangeLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationTableFieldID" Type="Int32" Nullable="false" />
+    <Property Name="RecordID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BeforeValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AfterValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChangeMade" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ApplicationTableField" Relationship="Self.FK_ChangeLog_ApplicationTableField" FromRole="ChangeLog" ToRole="ApplicationTableField" />
+  </EntityType>
+  <EntityType Name="ClientAddress">
+    <Key>
+      <PropertyRef Name="ClientAddressID" />
+    </Key>
+    <Property Name="ClientAddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhysicalLocationID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PhysicalLocation" Relationship="Self.FK_ClientAddress_PhysicalLocation" FromRole="ClientAddress" ToRole="PhysicalLocation" />
+  </EntityType>
+  <EntityType Name="ClientLocationAlia">
+    <Key>
+      <PropertyRef Name="ClientLocationAliasID" />
+    </Key>
+    <Property Name="ClientLocationAliasID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientLocationAliasTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ClientLocationAliasType" Relationship="Self.FK_ClientLocationAlias_ClientLocationAliasType" FromRole="ClientLocationAlias" ToRole="ClientLocationAliasType" />
+  </EntityType>
+  <EntityType Name="PhysicalLocation">
+    <Key>
+      <PropertyRef Name="PhysicalLocationID" />
+    </Key>
+    <Property Name="PhysicalLocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenericName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MapLocation" Type="Geography" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ClientAddresses" Relationship="Self.FK_ClientAddress_PhysicalLocation" FromRole="PhysicalLocation" ToRole="ClientAddress" />
+    <NavigationProperty Name="RoutePlans" Relationship="Self.FK_RoutePlan_PhysicalLocation" FromRole="PhysicalLocation" ToRole="RoutePlan" />
+    <NavigationProperty Name="RoutePlans1" Relationship="Self.FK_RoutePlan_PhysicalLocation1" FromRole="PhysicalLocation" ToRole="RoutePlan" />
+  </EntityType>
+  <EntityType Name="Certification">
+    <Key>
+      <PropertyRef Name="CertificationID" />
+    </Key>
+    <Property Name="CertificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CertificationStatus" Relationship="Self.FK_CertificationStatus_Certification" FromRole="Certification" ToRole="CertificationStatus" />
+  </EntityType>
+  <EntityType Name="CertificationStatu">
+    <Key>
+      <PropertyRef Name="CertificationStatusID" />
+    </Key>
+    <Property Name="CertificationStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HumanResourceID" Type="Int32" Nullable="false" />
+    <Property Name="CertificationID" Type="Int32" Nullable="false" />
+    <Property Name="CertificationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AcceptableResult" Type="Boolean" Nullable="false" />
+    <Property Name="ResultDetail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Certification" Relationship="Self.FK_CertificationStatus_Certification" FromRole="CertificationStatus" ToRole="Certification" />
+    <NavigationProperty Name="HumanResource" Relationship="Self.FK_CertificationStatus_HumanResource" FromRole="CertificationStatus" ToRole="HumanResource" />
+  </EntityType>
+  <EntityType Name="Crew">
+    <Key>
+      <PropertyRef Name="CrewID" />
+    </Key>
+    <Property Name="CrewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CrewResources" Relationship="Self.FK_CrewResource_Crew" FromRole="Crew" ToRole="CrewResource" />
+    <NavigationProperty Name="RoutePlanResources" Relationship="Self.FK_RoutePlanResource_Crew" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources1" Relationship="Self.FK_RoutePlanResource_CrewMon" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources2" Relationship="Self.FK_RoutePlanResource_CrewSat" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources3" Relationship="Self.FK_RoutePlanResource_CrewSun" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources4" Relationship="Self.FK_RoutePlanResource_CrewThu" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources5" Relationship="Self.FK_RoutePlanResource_CrewTue" FromRole="Crew" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources6" Relationship="Self.FK_RoutePlanResource_CrewWed" FromRole="Crew" ToRole="RoutePlanResource" />
+  </EntityType>
+  <EntityType Name="CrewResource">
+    <Key>
+      <PropertyRef Name="CrewResourceID" />
+    </Key>
+    <Property Name="CrewResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CrewID" Type="Int32" Nullable="false" />
+    <Property Name="ResourceID" Type="Int32" Nullable="false" />
+    <Property Name="CrewRoleID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Crew" Relationship="Self.FK_CrewResource_Crew" FromRole="CrewResource" ToRole="Crew" />
+    <NavigationProperty Name="CrewRole" Relationship="Self.FK_CrewResource_CrewRole" FromRole="CrewResource" ToRole="CrewRole" />
+    <NavigationProperty Name="HumanResource" Relationship="Self.FK_CrewResource_HumanResource" FromRole="CrewResource" ToRole="HumanResource" />
+  </EntityType>
+  <EntityType Name="CrewRole">
+    <Key>
+      <PropertyRef Name="CrewRoleID" />
+    </Key>
+    <Property Name="CrewRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CrewResources" Relationship="Self.FK_CrewResource_CrewRole" FromRole="CrewRole" ToRole="CrewResource" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HumanResourceID" Type="Int32" Nullable="false" />
+    <Property Name="LicenseState" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LicenseExpiration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="VehicleInsurancePolicies" Relationship="Self.FK_VehicleInsurancePolicy_Driver" FromRole="Driver" ToRole="VehicleInsurancePolicy" />
+    <NavigationProperty Name="HumanResource" Relationship="Self.FK_Driver_HumanResource" FromRole="Driver" ToRole="HumanResource" />
+    <NavigationProperty Name="DriverMobileAssignements" Relationship="Self.FK_DriverMobileAssignement_Driver" FromRole="Driver" ToRole="DriverMobileAssignement" />
+    <NavigationProperty Name="DriverVehicles" Relationship="Self.FK_DriverVehicle_Driver" FromRole="Driver" ToRole="DriverVehicle" />
+    <NavigationProperty Name="RoutePlanResources" Relationship="Self.FK_RoutePlanResource_DriverFri" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources1" Relationship="Self.FK_RoutePlanResource_DriverMon" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources2" Relationship="Self.FK_RoutePlanResource_DriverSat" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources3" Relationship="Self.FK_RoutePlanResource_DriverSun" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources4" Relationship="Self.FK_RoutePlanResource_DriverThu" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources5" Relationship="Self.FK_RoutePlanResource_DriverTue" FromRole="Driver" ToRole="RoutePlanResource" />
+    <NavigationProperty Name="RoutePlanResources6" Relationship="Self.FK_RoutePlanResource_DriverWed" FromRole="Driver" ToRole="RoutePlanResource" />
+  </EntityType>
+  <EntityType Name="DriverMobileAssignement">
+    <Key>
+      <PropertyRef Name="DriverMobileAssignementID" />
+    </Key>
+    <Property Name="DriverMobileAssignementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <Property Name="MobileUnitID" Type="Int32" Nullable="false" />
+    <Property Name="DateAssigned" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LeaseCostPerSettlementPeriod" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LeasePaymentMaximum" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LeasePaymentCollected" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MobileUnit" Relationship="Self.FK_DriverMobileAssignement_MobileUnit" FromRole="DriverMobileAssignement" ToRole="MobileUnit" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_DriverMobileAssignement_Driver" FromRole="DriverMobileAssignement" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="DriverVehicle">
+    <Key>
+      <PropertyRef Name="DriverVehicleID" />
+    </Key>
+    <Property Name="DriverVehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <Property Name="VehicleDetailID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="VehicleDetail" Relationship="Self.FK_DriverVehicle_VehicleDetail" FromRole="DriverVehicle" ToRole="VehicleDetail" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_DriverVehicle_Driver" FromRole="DriverVehicle" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="HumanResource">
+    <Key>
+      <PropertyRef Name="HumanResourceID" />
+    </Key>
+    <Property Name="HumanResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResourceSystemTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ResourceType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ResourceIdentificationBadge" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SocialSecurityNumber" Type="String" MaxLength="13" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IsMale" Type="Boolean" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ResourceImage" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ResourceImageType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MapLocation" Type="Geography" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ResourceType1" Relationship="Self.FK_HumanResource_ResourceType" FromRole="HumanResource" ToRole="ResourceType" />
+    <NavigationProperty Name="CertificationStatus" Relationship="Self.FK_CertificationStatus_HumanResource" FromRole="HumanResource" ToRole="CertificationStatus" />
+    <NavigationProperty Name="CrewResources" Relationship="Self.FK_CrewResource_HumanResource" FromRole="HumanResource" ToRole="CrewResource" />
+    <NavigationProperty Name="Drivers" Relationship="Self.FK_Driver_HumanResource" FromRole="HumanResource" ToRole="Driver" />
+  </EntityType>
+  <EntityType Name="RoutePlan">
+    <Key>
+      <PropertyRef Name="RoutePlanID" />
+    </Key>
+    <Property Name="RoutePlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoutePlanFamilyID" Type="Int32" Nullable="false" />
+    <Property Name="RoutePlanState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UTCOffset" Type="Int32" Nullable="false" />
+    <Property Name="IsScheduled" Type="Boolean" Nullable="false" />
+    <Property Name="OriginationPhysicalLocationID" Type="Int32" Nullable="false" />
+    <Property Name="EstimatedLocalStartTime" Type="Time" Nullable="false" Precision="5" />
+    <Property Name="IsDriverCheckInRequired" Type="Boolean" Nullable="false" />
+    <Property Name="DriverCheckInMinutesBeforeStartTime" Type="Int32" Nullable="false" />
+    <Property Name="IsAbleToStartEarly" Type="Boolean" Nullable="false" />
+    <Property Name="EarliestStartTimeMinutes" Type="Int32" Nullable="false" />
+    <Property Name="LateStartTimeThresholdInMinutes" Type="Int32" Nullable="false" />
+    <Property Name="IsFedByASN" Type="Boolean" Nullable="false" />
+    <Property Name="ASNCutoffTime" Type="Time" Precision="5" />
+    <Property Name="TerminationPhysicalLocationID" Type="Int32" Nullable="false" />
+    <Property Name="EstimatedLocalEndTime" Type="Time" Nullable="false" Precision="5" />
+    <Property Name="EndTimeAdditionalDayCount" Type="Int32" Nullable="false" />
+    <Property Name="RequiredVehicleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="RouteClassificationID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RouteClassification" Relationship="Self.FK_RoutePlan_RouteClassification" FromRole="RoutePlan" ToRole="RouteClassification" />
+    <NavigationProperty Name="VehicleType" Relationship="Self.FK_RoutePlan_VehicleType" FromRole="RoutePlan" ToRole="VehicleType" />
+    <NavigationProperty Name="PhysicalLocation" Relationship="Self.FK_RoutePlan_PhysicalLocation" FromRole="RoutePlan" ToRole="PhysicalLocation" />
+    <NavigationProperty Name="PhysicalLocation1" Relationship="Self.FK_RoutePlan_PhysicalLocation1" FromRole="RoutePlan" ToRole="PhysicalLocation" />
+    <NavigationProperty Name="RoutePlanFamily" Relationship="Self.FK_RoutePlan_RoutePlanFamily" FromRole="RoutePlan" ToRole="RoutePlanFamily" />
+    <NavigationProperty Name="RoutePlanResources" Relationship="Self.FK_RoutePlanResource_RoutePlan" FromRole="RoutePlan" ToRole="RoutePlanResource" />
+  </EntityType>
+  <EntityType Name="RoutePlanFamily">
+    <Key>
+      <PropertyRef Name="RoutePlanFamilyID" />
+    </Key>
+    <Property Name="RoutePlanFamilyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RoutePlans" Relationship="Self.FK_RoutePlan_RoutePlanFamily" FromRole="RoutePlanFamily" ToRole="RoutePlan" />
+  </EntityType>
+  <EntityType Name="RoutePlanResource">
+    <Key>
+      <PropertyRef Name="RoutePlanResourceID" />
+    </Key>
+    <Property Name="RoutePlanResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoutePlanID" Type="Int32" Nullable="false" />
+    <Property Name="IsCrewRoute" Type="Boolean" Nullable="false" />
+    <Property Name="DriverIDSunday" Type="Int32" />
+    <Property Name="DriverIDMonday" Type="Int32" />
+    <Property Name="DriverIDTuesday" Type="Int32" />
+    <Property Name="DriverIDWednesday" Type="Int32" />
+    <Property Name="DriverIDThursday" Type="Int32" />
+    <Property Name="DriverIDFriday" Type="Int32" />
+    <Property Name="DriverIDSaturday" Type="Int32" />
+    <Property Name="CrewIDSunday" Type="Int32" />
+    <Property Name="CrewIDMonday" Type="Int32" />
+    <Property Name="CrewIDTuesday" Type="Int32" />
+    <Property Name="CrewIDWednesday" Type="Int32" />
+    <Property Name="CrewIDThursday" Type="Int32" />
+    <Property Name="CrewIDFriday" Type="Int32" />
+    <Property Name="CrewIDSaturday" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Crew" Relationship="Self.FK_RoutePlanResource_Crew" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew1" Relationship="Self.FK_RoutePlanResource_CrewMon" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew2" Relationship="Self.FK_RoutePlanResource_CrewSat" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew3" Relationship="Self.FK_RoutePlanResource_CrewSun" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew4" Relationship="Self.FK_RoutePlanResource_CrewThu" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew5" Relationship="Self.FK_RoutePlanResource_CrewTue" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Crew6" Relationship="Self.FK_RoutePlanResource_CrewWed" FromRole="RoutePlanResource" ToRole="Crew" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_RoutePlanResource_DriverFri" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver1" Relationship="Self.FK_RoutePlanResource_DriverMon" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver2" Relationship="Self.FK_RoutePlanResource_DriverSat" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver3" Relationship="Self.FK_RoutePlanResource_DriverSun" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver4" Relationship="Self.FK_RoutePlanResource_DriverThu" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver5" Relationship="Self.FK_RoutePlanResource_DriverTue" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="Driver6" Relationship="Self.FK_RoutePlanResource_DriverWed" FromRole="RoutePlanResource" ToRole="Driver" />
+    <NavigationProperty Name="RoutePlan" Relationship="Self.FK_RoutePlanResource_RoutePlan" FromRole="RoutePlanResource" ToRole="RoutePlan" />
+  </EntityType>
+  <EntityType Name="CostComponentUnit">
+    <Key>
+      <PropertyRef Name="CostComponentUnitID" />
+    </Key>
+    <Property Name="CostComponentUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CostToObtain" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="ChargeToCustomer" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TaskCosts" Relationship="Self.FK_TaskCost_CostComponentUnit" FromRole="CostComponentUnit" ToRole="TaskCost" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CalculatedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OverrideCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CalculatedCharge" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OverrideCharge" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MaximumDiscount" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ProductTasks" Relationship="Self.FK_ProductTask_Product" FromRole="Product" ToRole="ProductTask" />
+  </EntityType>
+  <EntityType Name="ProductTask">
+    <Key>
+      <PropertyRef Name="ProductTaskID" />
+    </Key>
+    <Property Name="ProductTaskID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="TaskID" Type="Int32" Nullable="false" />
+    <Property Name="Sequence" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductTask_Product" FromRole="ProductTask" ToRole="Product" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_ProductTask_Task" FromRole="ProductTask" ToRole="Task" />
+  </EntityType>
+  <EntityType Name="SurchargeDiscount">
+    <Key>
+      <PropertyRef Name="SurchargeDiscountID" />
+    </Key>
+    <Property Name="SurchargeDiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsSurcharge" Type="Boolean" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CalculatedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OverrideCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CalculatedCharge" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OverrideCharge" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MaximumDiscount" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ProductTasks" Relationship="Self.FK_ProductTask_Task" FromRole="Task" ToRole="ProductTask" />
+    <NavigationProperty Name="TaskCosts" Relationship="Self.FK_TaskCost_Task" FromRole="Task" ToRole="TaskCost" />
+  </EntityType>
+  <EntityType Name="TaskCost">
+    <Key>
+      <PropertyRef Name="TaskCostID" />
+    </Key>
+    <Property Name="TaskCostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskID" Type="Int32" Nullable="false" />
+    <Property Name="CostComponentUnitID" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CostComponentUnit" Relationship="Self.FK_TaskCost_CostComponentUnit" FromRole="TaskCost" ToRole="CostComponentUnit" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_TaskCost_Task" FromRole="TaskCost" ToRole="Task" />
+  </EntityType>
+  <Association Name="FK_ManagementUnit_CostProfitCenter">
+    <End Role="CostProfitCenter" Type="Self.CostProfitCenter" Multiplicity="1" />
+    <End Role="ManagementUnit" Type="Self.ManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostProfitCenter">
+        <PropertyRef Name="CostProfitCenterID" />
+      </Principal>
+      <Dependent Role="ManagementUnit">
+        <PropertyRef Name="CostCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientLocationAliasType_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientLocationAliasType" Type="Self.ClientLocationAliasType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ClientLocationAliasType">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientManagementUnit_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientManagementUnit" Type="Self.ClientManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ClientManagementUnit">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientManagementUnit_ManagementUnit">
+    <End Role="ManagementUnit" Type="Self.ManagementUnit" Multiplicity="1" />
+    <End Role="ClientManagementUnit" Type="Self.ClientManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementUnit">
+        <PropertyRef Name="ManagementUnitID" />
+      </Principal>
+      <Dependent Role="ClientManagementUnit">
+        <PropertyRef Name="ManagementUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientLocationAlias_ClientLocationAliasType">
+    <End Role="ClientLocationAliasType" Type="Self.ClientLocationAliasType" Multiplicity="1" />
+    <End Role="ClientLocationAlias" Type="Self.ClientLocationAlia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientLocationAliasType">
+        <PropertyRef Name="ClientLocationAliasTypeID" />
+      </Principal>
+      <Dependent Role="ClientLocationAlias">
+        <PropertyRef Name="ClientLocationAliasTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomField_ApplicationTable">
+    <End Role="ApplicationTable" Type="Self.ApplicationTable" Multiplicity="1" />
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTable">
+        <PropertyRef Name="ApplicationTableID" />
+      </Principal>
+      <Dependent Role="CustomField">
+        <PropertyRef Name="ApplicationTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomField_CustomFieldType">
+    <End Role="CustomFieldType" Type="Self.CustomFieldType" Multiplicity="1" />
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomFieldType">
+        <PropertyRef Name="CustomFieldTypeID" />
+      </Principal>
+      <Dependent Role="CustomField">
+        <PropertyRef Name="CustomFieldTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomFieldSelectionList_CustomField">
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="1" />
+    <End Role="CustomFieldSelectionList" Type="Self.CustomFieldSelectionList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomField">
+        <PropertyRef Name="CustomFieldID" />
+      </Principal>
+      <Dependent Role="CustomFieldSelectionList">
+        <PropertyRef Name="CustomFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HumanResource_ResourceType">
+    <End Role="ResourceType" Type="Self.ResourceType" Multiplicity="1" />
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResourceType">
+        <PropertyRef Name="ResourceTypeID" />
+      </Principal>
+      <Dependent Role="HumanResource">
+        <PropertyRef Name="ResourceSystemTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_RouteClassification">
+    <End Role="RouteClassification" Type="Self.RouteClassification" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RouteClassification">
+        <PropertyRef Name="RouteClassificationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RouteClassificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_VehicleType">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RequiredVehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverMobileAssignement_MobileUnit">
+    <End Role="MobileUnit" Type="Self.MobileUnit" Multiplicity="1" />
+    <End Role="DriverMobileAssignement" Type="Self.DriverMobileAssignement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MobileUnit">
+        <PropertyRef Name="MobileUnitID" />
+      </Principal>
+      <Dependent Role="DriverMobileAssignement">
+        <PropertyRef Name="MobileUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverVehicle_VehicleDetail">
+    <End Role="VehicleDetail" Type="Self.VehicleDetail" Multiplicity="1" />
+    <End Role="DriverVehicle" Type="Self.DriverVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleDetail">
+        <PropertyRef Name="VehicleDetailID" />
+      </Principal>
+      <Dependent Role="DriverVehicle">
+        <PropertyRef Name="VehicleDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleDetail_VehicleInsurancePolicy">
+    <End Role="VehicleInsurancePolicy" Type="Self.VehicleInsurancePolicy" Multiplicity="0..1" />
+    <End Role="VehicleDetail" Type="Self.VehicleDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInsurancePolicy">
+        <PropertyRef Name="VehicleInsurancePolicyID" />
+      </Principal>
+      <Dependent Role="VehicleDetail">
+        <PropertyRef Name="VehicleInsurancePolicyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleInsurancePolicy_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="VehicleInsurancePolicy" Type="Self.VehicleInsurancePolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="VehicleInsurancePolicy">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationTableField_ApplicationTable">
+    <End Role="ApplicationTable" Type="Self.ApplicationTable" Multiplicity="1" />
+    <End Role="ApplicationTableField" Type="Self.ApplicationTableField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTable">
+        <PropertyRef Name="ApplicationTableID" />
+      </Principal>
+      <Dependent Role="ApplicationTableField">
+        <PropertyRef Name="ApplicationTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChangeLog_ApplicationTableField">
+    <End Role="ApplicationTableField" Type="Self.ApplicationTableField" Multiplicity="1" />
+    <End Role="ChangeLog" Type="Self.ChangeLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTableField">
+        <PropertyRef Name="ApplicationTableFieldID" />
+      </Principal>
+      <Dependent Role="ChangeLog">
+        <PropertyRef Name="ApplicationTableFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientAddress_PhysicalLocation">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="ClientAddress" Type="Self.ClientAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="ClientAddress">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_PhysicalLocation">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="OriginationPhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_PhysicalLocation1">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="TerminationPhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CertificationStatus_Certification">
+    <End Role="Certification" Type="Self.Certification" Multiplicity="1" />
+    <End Role="CertificationStatus" Type="Self.CertificationStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certification">
+        <PropertyRef Name="CertificationID" />
+      </Principal>
+      <Dependent Role="CertificationStatus">
+        <PropertyRef Name="CertificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CertificationStatus_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="CertificationStatus" Type="Self.CertificationStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="CertificationStatus">
+        <PropertyRef Name="HumanResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_Crew">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="CrewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_Crew">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewMon">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDMonday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewSat">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDSaturday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewSun">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDSunday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewThu">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewTue">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDWednesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewWed">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDThursday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_CrewRole">
+    <End Role="CrewRole" Type="Self.CrewRole" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewRole">
+        <PropertyRef Name="CrewRoleID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="CrewRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="ResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Driver_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="HumanResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverMobileAssignement_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="DriverMobileAssignement" Type="Self.DriverMobileAssignement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="DriverMobileAssignement">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverVehicle_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="DriverVehicle" Type="Self.DriverVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="DriverVehicle">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverFri">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverMon">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDMonday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverSat">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDSaturday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverSun">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDSunday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverThu">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDThursday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverTue">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDTuesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverWed">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDWednesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_RoutePlanFamily">
+    <End Role="RoutePlanFamily" Type="Self.RoutePlanFamily" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoutePlanFamily">
+        <PropertyRef Name="RoutePlanFamilyID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RoutePlanFamilyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_RoutePlan">
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoutePlan">
+        <PropertyRef Name="RoutePlanID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="RoutePlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCost_CostComponentUnit">
+    <End Role="CostComponentUnit" Type="Self.CostComponentUnit" Multiplicity="1" />
+    <End Role="TaskCost" Type="Self.TaskCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostComponentUnit">
+        <PropertyRef Name="CostComponentUnitID" />
+      </Principal>
+      <Dependent Role="TaskCost">
+        <PropertyRef Name="CostComponentUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTask_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductTask" Type="Self.ProductTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductTask">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTask_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="ProductTask" Type="Self.ProductTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="TaskID" />
+      </Principal>
+      <Dependent Role="ProductTask">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCost_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskCost" Type="Self.TaskCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="TaskID" />
+      </Principal>
+      <Dependent Role="TaskCost">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MSTSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CostProfitCenters" EntityType="Self.CostProfitCenter" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="ClientBillingEntities" EntityType="Self.ClientBillingEntity" />
+    <EntitySet Name="ClientManagementUnits" EntityType="Self.ClientManagementUnit" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="ClientLocationAliasTypes" EntityType="Self.ClientLocationAliasType" />
+    <EntitySet Name="CustomFields" EntityType="Self.CustomField" />
+    <EntitySet Name="CustomFieldSelectionLists" EntityType="Self.CustomFieldSelectionList" />
+    <EntitySet Name="CustomFieldTypes" EntityType="Self.CustomFieldType" />
+    <EntitySet Name="ManagementUnits" EntityType="Self.ManagementUnit" />
+    <EntitySet Name="ResourceTypes" EntityType="Self.ResourceType" />
+    <EntitySet Name="RouteClassifications" EntityType="Self.RouteClassification" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="VehicleTypes" EntityType="Self.VehicleType" />
+    <EntitySet Name="MobileUnits" EntityType="Self.MobileUnit" />
+    <EntitySet Name="VehicleDetails" EntityType="Self.VehicleDetail" />
+    <EntitySet Name="VehicleInsurancePolicies" EntityType="Self.VehicleInsurancePolicy" />
+    <EntitySet Name="ActionTracks" EntityType="Self.ActionTrack" />
+    <EntitySet Name="ApplicationTables" EntityType="Self.ApplicationTable" />
+    <EntitySet Name="ApplicationTableFields" EntityType="Self.ApplicationTableField" />
+    <EntitySet Name="ChangeLogs" EntityType="Self.ChangeLog" />
+    <EntitySet Name="ClientAddresses" EntityType="Self.ClientAddress" />
+    <EntitySet Name="ClientLocationAlias" EntityType="Self.ClientLocationAlia" />
+    <EntitySet Name="PhysicalLocations" EntityType="Self.PhysicalLocation" />
+    <EntitySet Name="Certifications" EntityType="Self.Certification" />
+    <EntitySet Name="CertificationStatus" EntityType="Self.CertificationStatu" />
+    <EntitySet Name="Crews" EntityType="Self.Crew" />
+    <EntitySet Name="CrewResources" EntityType="Self.CrewResource" />
+    <EntitySet Name="CrewRoles" EntityType="Self.CrewRole" />
+    <EntitySet Name="Drivers" EntityType="Self.Driver" />
+    <EntitySet Name="DriverMobileAssignements" EntityType="Self.DriverMobileAssignement" />
+    <EntitySet Name="DriverVehicles" EntityType="Self.DriverVehicle" />
+    <EntitySet Name="HumanResources" EntityType="Self.HumanResource" />
+    <EntitySet Name="RoutePlans" EntityType="Self.RoutePlan" />
+    <EntitySet Name="RoutePlanFamilies" EntityType="Self.RoutePlanFamily" />
+    <EntitySet Name="RoutePlanResources" EntityType="Self.RoutePlanResource" />
+    <EntitySet Name="CostComponentUnits" EntityType="Self.CostComponentUnit" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductTasks" EntityType="Self.ProductTask" />
+    <EntitySet Name="SurchargeDiscounts" EntityType="Self.SurchargeDiscount" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="TaskCosts" EntityType="Self.TaskCost" />
+    <AssociationSet Name="FK_ManagementUnit_CostProfitCenter" Association="Self.FK_ManagementUnit_CostProfitCenter">
+      <End Role="CostProfitCenter" EntitySet="CostProfitCenters" />
+      <End Role="ManagementUnit" EntitySet="ManagementUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientLocationAliasType_Client" Association="Self.FK_ClientLocationAliasType_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="ClientLocationAliasType" EntitySet="ClientLocationAliasTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientManagementUnit_Client" Association="Self.FK_ClientManagementUnit_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="ClientManagementUnit" EntitySet="ClientManagementUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientManagementUnit_ManagementUnit" Association="Self.FK_ClientManagementUnit_ManagementUnit">
+      <End Role="ManagementUnit" EntitySet="ManagementUnits" />
+      <End Role="ClientManagementUnit" EntitySet="ClientManagementUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientLocationAlias_ClientLocationAliasType" Association="Self.FK_ClientLocationAlias_ClientLocationAliasType">
+      <End Role="ClientLocationAliasType" EntitySet="ClientLocationAliasTypes" />
+      <End Role="ClientLocationAlias" EntitySet="ClientLocationAlias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomField_ApplicationTable" Association="Self.FK_CustomField_ApplicationTable">
+      <End Role="ApplicationTable" EntitySet="ApplicationTables" />
+      <End Role="CustomField" EntitySet="CustomFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomField_CustomFieldType" Association="Self.FK_CustomField_CustomFieldType">
+      <End Role="CustomFieldType" EntitySet="CustomFieldTypes" />
+      <End Role="CustomField" EntitySet="CustomFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomFieldSelectionList_CustomField" Association="Self.FK_CustomFieldSelectionList_CustomField">
+      <End Role="CustomField" EntitySet="CustomFields" />
+      <End Role="CustomFieldSelectionList" EntitySet="CustomFieldSelectionLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HumanResource_ResourceType" Association="Self.FK_HumanResource_ResourceType">
+      <End Role="ResourceType" EntitySet="ResourceTypes" />
+      <End Role="HumanResource" EntitySet="HumanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_RouteClassification" Association="Self.FK_RoutePlan_RouteClassification">
+      <End Role="RouteClassification" EntitySet="RouteClassifications" />
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_VehicleType" Association="Self.FK_RoutePlan_VehicleType">
+      <End Role="VehicleType" EntitySet="VehicleTypes" />
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverMobileAssignement_MobileUnit" Association="Self.FK_DriverMobileAssignement_MobileUnit">
+      <End Role="MobileUnit" EntitySet="MobileUnits" />
+      <End Role="DriverMobileAssignement" EntitySet="DriverMobileAssignements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverVehicle_VehicleDetail" Association="Self.FK_DriverVehicle_VehicleDetail">
+      <End Role="VehicleDetail" EntitySet="VehicleDetails" />
+      <End Role="DriverVehicle" EntitySet="DriverVehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleDetail_VehicleInsurancePolicy" Association="Self.FK_VehicleDetail_VehicleInsurancePolicy">
+      <End Role="VehicleInsurancePolicy" EntitySet="VehicleInsurancePolicies" />
+      <End Role="VehicleDetail" EntitySet="VehicleDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleInsurancePolicy_Driver" Association="Self.FK_VehicleInsurancePolicy_Driver">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="VehicleInsurancePolicy" EntitySet="VehicleInsurancePolicies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationTableField_ApplicationTable" Association="Self.FK_ApplicationTableField_ApplicationTable">
+      <End Role="ApplicationTable" EntitySet="ApplicationTables" />
+      <End Role="ApplicationTableField" EntitySet="ApplicationTableFields" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChangeLog_ApplicationTableField" Association="Self.FK_ChangeLog_ApplicationTableField">
+      <End Role="ApplicationTableField" EntitySet="ApplicationTableFields" />
+      <End Role="ChangeLog" EntitySet="ChangeLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientAddress_PhysicalLocation" Association="Self.FK_ClientAddress_PhysicalLocation">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocations" />
+      <End Role="ClientAddress" EntitySet="ClientAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_PhysicalLocation" Association="Self.FK_RoutePlan_PhysicalLocation">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocations" />
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_PhysicalLocation1" Association="Self.FK_RoutePlan_PhysicalLocation1">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocations" />
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CertificationStatus_Certification" Association="Self.FK_CertificationStatus_Certification">
+      <End Role="Certification" EntitySet="Certifications" />
+      <End Role="CertificationStatus" EntitySet="CertificationStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CertificationStatus_HumanResource" Association="Self.FK_CertificationStatus_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResources" />
+      <End Role="CertificationStatus" EntitySet="CertificationStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_Crew" Association="Self.FK_CrewResource_Crew">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="CrewResource" EntitySet="CrewResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_Crew" Association="Self.FK_RoutePlanResource_Crew">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewMon" Association="Self.FK_RoutePlanResource_CrewMon">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewSat" Association="Self.FK_RoutePlanResource_CrewSat">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewSun" Association="Self.FK_RoutePlanResource_CrewSun">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewThu" Association="Self.FK_RoutePlanResource_CrewThu">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewTue" Association="Self.FK_RoutePlanResource_CrewTue">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewWed" Association="Self.FK_RoutePlanResource_CrewWed">
+      <End Role="Crew" EntitySet="Crews" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_CrewRole" Association="Self.FK_CrewResource_CrewRole">
+      <End Role="CrewRole" EntitySet="CrewRoles" />
+      <End Role="CrewResource" EntitySet="CrewResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_HumanResource" Association="Self.FK_CrewResource_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResources" />
+      <End Role="CrewResource" EntitySet="CrewResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Driver_HumanResource" Association="Self.FK_Driver_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResources" />
+      <End Role="Driver" EntitySet="Drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverMobileAssignement_Driver" Association="Self.FK_DriverMobileAssignement_Driver">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="DriverMobileAssignement" EntitySet="DriverMobileAssignements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverVehicle_Driver" Association="Self.FK_DriverVehicle_Driver">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="DriverVehicle" EntitySet="DriverVehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverFri" Association="Self.FK_RoutePlanResource_DriverFri">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverMon" Association="Self.FK_RoutePlanResource_DriverMon">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverSat" Association="Self.FK_RoutePlanResource_DriverSat">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverSun" Association="Self.FK_RoutePlanResource_DriverSun">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverThu" Association="Self.FK_RoutePlanResource_DriverThu">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverTue" Association="Self.FK_RoutePlanResource_DriverTue">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverWed" Association="Self.FK_RoutePlanResource_DriverWed">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_RoutePlanFamily" Association="Self.FK_RoutePlan_RoutePlanFamily">
+      <End Role="RoutePlanFamily" EntitySet="RoutePlanFamilies" />
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_RoutePlan" Association="Self.FK_RoutePlanResource_RoutePlan">
+      <End Role="RoutePlan" EntitySet="RoutePlans" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCost_CostComponentUnit" Association="Self.FK_TaskCost_CostComponentUnit">
+      <End Role="CostComponentUnit" EntitySet="CostComponentUnits" />
+      <End Role="TaskCost" EntitySet="TaskCosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTask_Product" Association="Self.FK_ProductTask_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductTask" EntitySet="ProductTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTask_Task" Association="Self.FK_ProductTask_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="ProductTask" EntitySet="ProductTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCost_Task" Association="Self.FK_TaskCost_Task">
+      <End Role="Task" EntitySet="Tasks" />
+      <End Role="TaskCost" EntitySet="TaskCosts" />
+    </AssociationSet>
+    <EntitySet Name="ManagementEntities" EntityType="MSTSModel.ManagementEntity" />
+    <AssociationSet Name="FK_ManagementUnit_ManagementEntity" Association="MSTSModel.FK_ManagementUnit_ManagementEntity">
+      <End Role="ManagementEntity" EntitySet="ManagementEntities" />
+      <End Role="ManagementUnit" EntitySet="ManagementUnits" />
+    </AssociationSet>
+    <EntitySet Name="ManagementEntityLevels" EntityType="MSTSModel.ManagementEntityLevel" />
+    <AssociationSet Name="FK_ManagementEntity_ManagementEntityLevel" Association="MSTSModel.FK_ManagementEntity_ManagementEntityLevel">
+      <End Role="ManagementEntityLevel" EntitySet="ManagementEntityLevels" />
+      <End Role="ManagementEntity" EntitySet="ManagementEntities" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ManagementEntity">
+    <Key>
+      <PropertyRef Name="ManagementEntityID" />
+    </Key>
+    <Property Name="ManagementEntityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ManagementEntityLevelID" Type="Int32" Nullable="false" />
+    <Property Name="ParentManagementEntityID" Type="Int32" Nullable="false" />
+    <Property Name="CanContainManagementUnits" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementUnits" Relationship="MSTSModel.FK_ManagementUnit_ManagementEntity" FromRole="ManagementEntity" ToRole="ManagementUnit" />
+    <NavigationProperty Name="ManagementEntityLevel" Relationship="MSTSModel.FK_ManagementEntity_ManagementEntityLevel" FromRole="ManagementEntity" ToRole="ManagementEntityLevel" />
+  </EntityType>
+  <Association Name="FK_ManagementUnit_ManagementEntity">
+    <End Type="MSTSModel.ManagementEntity" Role="ManagementEntity" Multiplicity="1" />
+    <End Type="MSTSModel.ManagementUnit" Role="ManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementEntity">
+        <PropertyRef Name="ManagementEntityID" />
+      </Principal>
+      <Dependent Role="ManagementUnit">
+        <PropertyRef Name="ManagementEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ManagementEntityLevel">
+    <Key>
+      <PropertyRef Name="ManagementEntityLevelID" />
+    </Key>
+    <Property Name="ManagementEntityLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LevelNumber" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="RecordAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RecordAddedBy" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModifiedBy" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ManagementEntities" Relationship="MSTSModel.FK_ManagementEntity_ManagementEntityLevel" FromRole="ManagementEntityLevel" ToRole="ManagementEntity" />
+  </EntityType>
+  <Association Name="FK_ManagementEntity_ManagementEntityLevel">
+    <End Type="MSTSModel.ManagementEntityLevel" Role="ManagementEntityLevel" Multiplicity="1" />
+    <End Type="MSTSModel.ManagementEntity" Role="ManagementEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementEntityLevel">
+        <PropertyRef Name="ManagementEntityLevelID" />
+      </Principal>
+      <Dependent Role="ManagementEntity">
+        <PropertyRef Name="ManagementEntityLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,1571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MSTSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CostProfitCenter">
+    <Key>
+      <PropertyRef Name="CostProfitCenterID" />
+    </Key>
+    <Property Name="CostProfitCenterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsCostCenter" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClientShortName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="HeadQuartersAddress1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HeadQuartersAddress2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HeadQuartersCity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HeadQuartersState" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="HeadQuartersZipCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientBillingEntity">
+    <Key>
+      <PropertyRef Name="ClientBillingEntityID" />
+    </Key>
+    <Property Name="ClientBillingEntityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClientAccountNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Attention" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientManagementUnit">
+    <Key>
+      <PropertyRef Name="ClientManagementUnitID" />
+    </Key>
+    <Property Name="ClientManagementUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="ManagementUnitID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactType" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ContactReferenceID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ContactTitle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ContactRole" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OfficePhone" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="MobilePhone" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="Fax" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientLocationAliasType">
+    <Key>
+      <PropertyRef Name="ClientLocationAliasTypeID" />
+    </Key>
+    <Property Name="ClientLocationAliasTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomField">
+    <Key>
+      <PropertyRef Name="CustomFieldID" />
+    </Key>
+    <Property Name="CustomFieldID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomFieldTypeID" Type="int" Nullable="false" />
+    <Property Name="ApplicationTableID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UILabel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="RangeMin" Type="int" />
+    <Property Name="RangeMax" Type="int" />
+    <Property Name="DateMin" Type="date" />
+    <Property Name="DateMax" Type="date" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomFieldSelectionList">
+    <Key>
+      <PropertyRef Name="CustomFieldSelectionListID" />
+    </Key>
+    <Property Name="CustomFieldSelectionListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomFieldID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomFieldType">
+    <Key>
+      <PropertyRef Name="CustomFieldTypeID" />
+    </Key>
+    <Property Name="CustomFieldTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementEntity">
+    <Key>
+      <PropertyRef Name="ManagementEntityID" />
+    </Key>
+    <Property Name="ManagementEntityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ManagementEntityLevelID" Type="int" Nullable="false" />
+    <Property Name="ParentManagementEntityID" Type="int" Nullable="false" />
+    <Property Name="CanContainManagementUnits" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementUnit">
+    <Key>
+      <PropertyRef Name="ManagementUnitID" />
+    </Key>
+    <Property Name="ManagementUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagementEntityID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CostCenterID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResourceType">
+    <Key>
+      <PropertyRef Name="ResourceTypeID" />
+    </Key>
+    <Property Name="ResourceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RouteClassification">
+    <Key>
+      <PropertyRef Name="RouteClassificationID" />
+    </Key>
+    <Property Name="RouteClassificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="VehicleTypeID" />
+    </Key>
+    <Property Name="VehicleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MobileUnit">
+    <Key>
+      <PropertyRef Name="MobileUnitID" />
+    </Key>
+    <Property Name="MobileUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccessNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsPrivatelyOwned" Type="bit" Nullable="false" />
+    <Property Name="IsCellularCapable" Type="bit" Nullable="false" />
+    <Property Name="IsScanCapable" Type="bit" Nullable="false" />
+    <Property Name="IsPhotoCapable" Type="bit" Nullable="false" />
+    <Property Name="IsSignatureCaptureCapable" Type="bit" Nullable="false" />
+    <Property Name="YearManufactured" Type="int" Nullable="false" />
+    <Property Name="IsAssigned" Type="bit" Nullable="false" />
+    <Property Name="IsDamaged" Type="bit" Nullable="false" />
+    <Property Name="IsBeingRepaired" Type="bit" Nullable="false" />
+    <Property Name="IsUnderWarranty" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleDetail">
+    <Key>
+      <PropertyRef Name="VehicleDetailID" />
+    </Key>
+    <Property Name="VehicleDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleInsurancePolicyID" Type="int" />
+    <Property Name="RegistrationState" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="LicensePlate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RegistrationExpiration" Type="datetime" Nullable="false" />
+    <Property Name="IsYearRequired" Type="bit" Nullable="false" />
+    <Property Name="VehicleYear" Type="int" />
+    <Property Name="IsMakeRequired" Type="bit" Nullable="false" />
+    <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+    <Property Name="IsModelRequired" Type="bit" Nullable="false" />
+    <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+    <Property Name="IsTrimRequired" Type="bit" Nullable="false" />
+    <Property Name="VehicleTrim" Type="varchar" MaxLength="50" />
+    <Property Name="IsMileageRequired" Type="bit" Nullable="false" />
+    <Property Name="VehicleMileage" Type="int" />
+    <Property Name="IsVehiclePriority" Type="bit" Nullable="false" />
+    <Property Name="IsFreeFormDetailRequired" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleInsurancePolicy">
+    <Key>
+      <PropertyRef Name="VehicleInsurancePolicyID" />
+    </Key>
+    <Property Name="VehicleInsurancePolicyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverID" Type="int" Nullable="false" />
+    <Property Name="InsuranceCompany" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PolicyNumber" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OriginalEffectiveCoverageDate" Type="datetime" Nullable="false" />
+    <Property Name="CurrentCoverageExpirationDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionTrack">
+    <Key>
+      <PropertyRef Name="ActionTrackID" />
+    </Key>
+    <Property Name="ActionTrackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detail" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ActionOccurred" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicationTable">
+    <Key>
+      <PropertyRef Name="ApplicationTableID" />
+    </Key>
+    <Property Name="ApplicationTableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApplicationTableField">
+    <Key>
+      <PropertyRef Name="ApplicationTableFieldID" />
+    </Key>
+    <Property Name="ApplicationTableFieldID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationTableID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FieldType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IsAudited" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeLog">
+    <Key>
+      <PropertyRef Name="ChangeLogID" />
+    </Key>
+    <Property Name="ChangeLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationTableFieldID" Type="int" Nullable="false" />
+    <Property Name="RecordID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="BeforeValue" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="AfterValue" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ChangeMade" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManagementEntityLevel">
+    <Key>
+      <PropertyRef Name="ManagementEntityLevelID" />
+    </Key>
+    <Property Name="ManagementEntityLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LevelNumber" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientAddress">
+    <Key>
+      <PropertyRef Name="ClientAddressID" />
+    </Key>
+    <Property Name="ClientAddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhysicalLocationID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientLocationAlias">
+    <Key>
+      <PropertyRef Name="ClientLocationAliasID" />
+    </Key>
+    <Property Name="ClientLocationAliasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientLocationAliasTypeID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhysicalLocation">
+    <Key>
+      <PropertyRef Name="PhysicalLocationID" />
+    </Key>
+    <Property Name="PhysicalLocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenericName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="County" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MapLocation" Type="geography" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Certification">
+    <Key>
+      <PropertyRef Name="CertificationID" />
+    </Key>
+    <Property Name="CertificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CertificationStatus">
+    <Key>
+      <PropertyRef Name="CertificationStatusID" />
+    </Key>
+    <Property Name="CertificationStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HumanResourceID" Type="int" Nullable="false" />
+    <Property Name="CertificationID" Type="int" Nullable="false" />
+    <Property Name="CertificationDate" Type="date" Nullable="false" />
+    <Property Name="AcceptableResult" Type="bit" Nullable="false" />
+    <Property Name="ResultDetail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crew">
+    <Key>
+      <PropertyRef Name="CrewID" />
+    </Key>
+    <Property Name="CrewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewResource">
+    <Key>
+      <PropertyRef Name="CrewResourceID" />
+    </Key>
+    <Property Name="CrewResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CrewID" Type="int" Nullable="false" />
+    <Property Name="ResourceID" Type="int" Nullable="false" />
+    <Property Name="CrewRoleID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewRole">
+    <Key>
+      <PropertyRef Name="CrewRoleID" />
+    </Key>
+    <Property Name="CrewRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HumanResourceID" Type="int" Nullable="false" />
+    <Property Name="LicenseState" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="LicenseExpiration" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DriverMobileAssignement">
+    <Key>
+      <PropertyRef Name="DriverMobileAssignementID" />
+    </Key>
+    <Property Name="DriverMobileAssignementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverID" Type="int" Nullable="false" />
+    <Property Name="MobileUnitID" Type="int" Nullable="false" />
+    <Property Name="DateAssigned" Type="datetime" Nullable="false" />
+    <Property Name="LeaseCostPerSettlementPeriod" Type="money" />
+    <Property Name="LeasePaymentMaximum" Type="money" />
+    <Property Name="LeasePaymentCollected" Type="money" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DriverVehicle">
+    <Key>
+      <PropertyRef Name="DriverVehicleID" />
+    </Key>
+    <Property Name="DriverVehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverID" Type="int" Nullable="false" />
+    <Property Name="VehicleDetailID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HumanResource">
+    <Key>
+      <PropertyRef Name="HumanResourceID" />
+    </Key>
+    <Property Name="HumanResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResourceSystemTypeID" Type="int" Nullable="false" />
+    <Property Name="ResourceType" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ResourceIdentificationBadge" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SocialSecurityNumber" Type="char" MaxLength="13" Nullable="false" />
+    <Property Name="IsMale" Type="bit" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="ResourceImage" Type="image" Nullable="false" />
+    <Property Name="ResourceImageType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="County" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MapLocation" Type="geography" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoutePlan">
+    <Key>
+      <PropertyRef Name="RoutePlanID" />
+    </Key>
+    <Property Name="RoutePlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoutePlanFamilyID" Type="int" Nullable="false" />
+    <Property Name="RoutePlanState" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UTCOffset" Type="int" Nullable="false" />
+    <Property Name="IsScheduled" Type="bit" Nullable="false" />
+    <Property Name="OriginationPhysicalLocationID" Type="int" Nullable="false" />
+    <Property Name="EstimatedLocalStartTime" Type="time" Precision="5" Nullable="false" />
+    <Property Name="IsDriverCheckInRequired" Type="bit" Nullable="false" />
+    <Property Name="DriverCheckInMinutesBeforeStartTime" Type="int" Nullable="false" />
+    <Property Name="IsAbleToStartEarly" Type="bit" Nullable="false" />
+    <Property Name="EarliestStartTimeMinutes" Type="int" Nullable="false" />
+    <Property Name="LateStartTimeThresholdInMinutes" Type="int" Nullable="false" />
+    <Property Name="IsFedByASN" Type="bit" Nullable="false" />
+    <Property Name="ASNCutoffTime" Type="time" Precision="5" />
+    <Property Name="TerminationPhysicalLocationID" Type="int" Nullable="false" />
+    <Property Name="EstimatedLocalEndTime" Type="time" Precision="5" Nullable="false" />
+    <Property Name="EndTimeAdditionalDayCount" Type="int" Nullable="false" />
+    <Property Name="RequiredVehicleTypeID" Type="int" Nullable="false" />
+    <Property Name="RouteClassificationID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoutePlanFamily">
+    <Key>
+      <PropertyRef Name="RoutePlanFamilyID" />
+    </Key>
+    <Property Name="RoutePlanFamilyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoutePlanResource">
+    <Key>
+      <PropertyRef Name="RoutePlanResourceID" />
+    </Key>
+    <Property Name="RoutePlanResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoutePlanID" Type="int" Nullable="false" />
+    <Property Name="IsCrewRoute" Type="bit" Nullable="false" />
+    <Property Name="DriverIDSunday" Type="int" />
+    <Property Name="DriverIDMonday" Type="int" />
+    <Property Name="DriverIDTuesday" Type="int" />
+    <Property Name="DriverIDWednesday" Type="int" />
+    <Property Name="DriverIDThursday" Type="int" />
+    <Property Name="DriverIDFriday" Type="int" />
+    <Property Name="DriverIDSaturday" Type="int" />
+    <Property Name="CrewIDSunday" Type="int" />
+    <Property Name="CrewIDMonday" Type="int" />
+    <Property Name="CrewIDTuesday" Type="int" />
+    <Property Name="CrewIDWednesday" Type="int" />
+    <Property Name="CrewIDThursday" Type="int" />
+    <Property Name="CrewIDFriday" Type="int" />
+    <Property Name="CrewIDSaturday" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CostComponentUnit">
+    <Key>
+      <PropertyRef Name="CostComponentUnitID" />
+    </Key>
+    <Property Name="CostComponentUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CostToObtain" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="ChargeToCustomer" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CalculatedCost" Type="money" Nullable="false" />
+    <Property Name="OverrideCost" Type="money" Nullable="false" />
+    <Property Name="CalculatedCharge" Type="money" Nullable="false" />
+    <Property Name="OverrideCharge" Type="money" Nullable="false" />
+    <Property Name="MaximumDiscount" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTask">
+    <Key>
+      <PropertyRef Name="ProductTaskID" />
+    </Key>
+    <Property Name="ProductTaskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SurchargeDiscount">
+    <Key>
+      <PropertyRef Name="SurchargeDiscountID" />
+    </Key>
+    <Property Name="SurchargeDiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsSurcharge" Type="bit" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CalculatedCost" Type="money" Nullable="false" />
+    <Property Name="OverrideCost" Type="money" Nullable="false" />
+    <Property Name="CalculatedCharge" Type="money" Nullable="false" />
+    <Property Name="OverrideCharge" Type="money" Nullable="false" />
+    <Property Name="MaximumDiscount" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskCost">
+    <Key>
+      <PropertyRef Name="TaskCostID" />
+    </Key>
+    <Property Name="TaskCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="CostComponentUnitID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="RecordAdded" Type="datetime" Nullable="false" />
+    <Property Name="RecordAddedBy" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastModified" Type="datetime" Nullable="false" />
+    <Property Name="LastModifiedBy" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ApplicationTableField_ApplicationTable">
+    <End Role="ApplicationTable" Type="Self.ApplicationTable" Multiplicity="1" />
+    <End Role="ApplicationTableField" Type="Self.ApplicationTableField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTable">
+        <PropertyRef Name="ApplicationTableID" />
+      </Principal>
+      <Dependent Role="ApplicationTableField">
+        <PropertyRef Name="ApplicationTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CertificationStatus_Certification">
+    <End Role="Certification" Type="Self.Certification" Multiplicity="1" />
+    <End Role="CertificationStatus" Type="Self.CertificationStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Certification">
+        <PropertyRef Name="CertificationID" />
+      </Principal>
+      <Dependent Role="CertificationStatus">
+        <PropertyRef Name="CertificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CertificationStatus_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="CertificationStatus" Type="Self.CertificationStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="CertificationStatus">
+        <PropertyRef Name="HumanResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChangeLog_ApplicationTableField">
+    <End Role="ApplicationTableField" Type="Self.ApplicationTableField" Multiplicity="1" />
+    <End Role="ChangeLog" Type="Self.ChangeLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTableField">
+        <PropertyRef Name="ApplicationTableFieldID" />
+      </Principal>
+      <Dependent Role="ChangeLog">
+        <PropertyRef Name="ApplicationTableFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientAddress_PhysicalLocation">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="ClientAddress" Type="Self.ClientAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="ClientAddress">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientLocationAlias_ClientLocationAliasType">
+    <End Role="ClientLocationAliasType" Type="Self.ClientLocationAliasType" Multiplicity="1" />
+    <End Role="ClientLocationAlias" Type="Self.ClientLocationAlias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientLocationAliasType">
+        <PropertyRef Name="ClientLocationAliasTypeID" />
+      </Principal>
+      <Dependent Role="ClientLocationAlias">
+        <PropertyRef Name="ClientLocationAliasTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientLocationAliasType_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientLocationAliasType" Type="Self.ClientLocationAliasType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ClientLocationAliasType">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientManagementUnit_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientManagementUnit" Type="Self.ClientManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="ClientManagementUnit">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientManagementUnit_ManagementUnit">
+    <End Role="ManagementUnit" Type="Self.ManagementUnit" Multiplicity="1" />
+    <End Role="ClientManagementUnit" Type="Self.ClientManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementUnit">
+        <PropertyRef Name="ManagementUnitID" />
+      </Principal>
+      <Dependent Role="ClientManagementUnit">
+        <PropertyRef Name="ManagementUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_Crew">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="CrewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_CrewRole">
+    <End Role="CrewRole" Type="Self.CrewRole" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewRole">
+        <PropertyRef Name="CrewRoleID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="CrewRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewResource_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="CrewResource" Type="Self.CrewResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="CrewResource">
+        <PropertyRef Name="ResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomField_ApplicationTable">
+    <End Role="ApplicationTable" Type="Self.ApplicationTable" Multiplicity="1" />
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationTable">
+        <PropertyRef Name="ApplicationTableID" />
+      </Principal>
+      <Dependent Role="CustomField">
+        <PropertyRef Name="ApplicationTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomField_CustomFieldType">
+    <End Role="CustomFieldType" Type="Self.CustomFieldType" Multiplicity="1" />
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomFieldType">
+        <PropertyRef Name="CustomFieldTypeID" />
+      </Principal>
+      <Dependent Role="CustomField">
+        <PropertyRef Name="CustomFieldTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomFieldSelectionList_CustomField">
+    <End Role="CustomField" Type="Self.CustomField" Multiplicity="1" />
+    <End Role="CustomFieldSelectionList" Type="Self.CustomFieldSelectionList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomField">
+        <PropertyRef Name="CustomFieldID" />
+      </Principal>
+      <Dependent Role="CustomFieldSelectionList">
+        <PropertyRef Name="CustomFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Driver_HumanResource">
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HumanResource">
+        <PropertyRef Name="HumanResourceID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="HumanResourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverMobileAssignement_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="DriverMobileAssignement" Type="Self.DriverMobileAssignement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="DriverMobileAssignement">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverMobileAssignement_MobileUnit">
+    <End Role="MobileUnit" Type="Self.MobileUnit" Multiplicity="1" />
+    <End Role="DriverMobileAssignement" Type="Self.DriverMobileAssignement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MobileUnit">
+        <PropertyRef Name="MobileUnitID" />
+      </Principal>
+      <Dependent Role="DriverMobileAssignement">
+        <PropertyRef Name="MobileUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverVehicle_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="DriverVehicle" Type="Self.DriverVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="DriverVehicle">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverVehicle_VehicleDetail">
+    <End Role="VehicleDetail" Type="Self.VehicleDetail" Multiplicity="1" />
+    <End Role="DriverVehicle" Type="Self.DriverVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleDetail">
+        <PropertyRef Name="VehicleDetailID" />
+      </Principal>
+      <Dependent Role="DriverVehicle">
+        <PropertyRef Name="VehicleDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HumanResource_ResourceType">
+    <End Role="ResourceType" Type="Self.ResourceType" Multiplicity="1" />
+    <End Role="HumanResource" Type="Self.HumanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResourceType">
+        <PropertyRef Name="ResourceTypeID" />
+      </Principal>
+      <Dependent Role="HumanResource">
+        <PropertyRef Name="ResourceSystemTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementEntity_ManagementEntityLevel">
+    <End Role="ManagementEntityLevel" Type="Self.ManagementEntityLevel" Multiplicity="1" />
+    <End Role="ManagementEntity" Type="Self.ManagementEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementEntityLevel">
+        <PropertyRef Name="ManagementEntityLevelID" />
+      </Principal>
+      <Dependent Role="ManagementEntity">
+        <PropertyRef Name="ManagementEntityLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementUnit_CostProfitCenter">
+    <End Role="CostProfitCenter" Type="Self.CostProfitCenter" Multiplicity="1" />
+    <End Role="ManagementUnit" Type="Self.ManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostProfitCenter">
+        <PropertyRef Name="CostProfitCenterID" />
+      </Principal>
+      <Dependent Role="ManagementUnit">
+        <PropertyRef Name="CostCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagementUnit_ManagementEntity">
+    <End Role="ManagementEntity" Type="Self.ManagementEntity" Multiplicity="1" />
+    <End Role="ManagementUnit" Type="Self.ManagementUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementEntity">
+        <PropertyRef Name="ManagementEntityID" />
+      </Principal>
+      <Dependent Role="ManagementUnit">
+        <PropertyRef Name="ManagementEntityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTask_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductTask" Type="Self.ProductTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductTask">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTask_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="ProductTask" Type="Self.ProductTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="TaskID" />
+      </Principal>
+      <Dependent Role="ProductTask">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_PhysicalLocation">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="OriginationPhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_PhysicalLocation1">
+    <End Role="PhysicalLocation" Type="Self.PhysicalLocation" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhysicalLocation">
+        <PropertyRef Name="PhysicalLocationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="TerminationPhysicalLocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_RouteClassification">
+    <End Role="RouteClassification" Type="Self.RouteClassification" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RouteClassification">
+        <PropertyRef Name="RouteClassificationID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RouteClassificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_RoutePlanFamily">
+    <End Role="RoutePlanFamily" Type="Self.RoutePlanFamily" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoutePlanFamily">
+        <PropertyRef Name="RoutePlanFamilyID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RoutePlanFamilyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlan_VehicleType">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="VehicleTypeID" />
+      </Principal>
+      <Dependent Role="RoutePlan">
+        <PropertyRef Name="RequiredVehicleTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_Crew">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewMon">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDMonday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewSat">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDSaturday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewSun">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDSunday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewThu">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewTue">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDWednesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_CrewWed">
+    <End Role="Crew" Type="Self.Crew" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="CrewIDThursday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverFri">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDFriday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverMon">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDMonday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverSat">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDSaturday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverSun">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDSunday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverThu">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDThursday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverTue">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDTuesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_DriverWed">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="DriverIDWednesday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoutePlanResource_RoutePlan">
+    <End Role="RoutePlan" Type="Self.RoutePlan" Multiplicity="1" />
+    <End Role="RoutePlanResource" Type="Self.RoutePlanResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoutePlan">
+        <PropertyRef Name="RoutePlanID" />
+      </Principal>
+      <Dependent Role="RoutePlanResource">
+        <PropertyRef Name="RoutePlanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCost_CostComponentUnit">
+    <End Role="CostComponentUnit" Type="Self.CostComponentUnit" Multiplicity="1" />
+    <End Role="TaskCost" Type="Self.TaskCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CostComponentUnit">
+        <PropertyRef Name="CostComponentUnitID" />
+      </Principal>
+      <Dependent Role="TaskCost">
+        <PropertyRef Name="CostComponentUnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaskCost_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="TaskCost" Type="Self.TaskCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="TaskID" />
+      </Principal>
+      <Dependent Role="TaskCost">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleDetail_VehicleInsurancePolicy">
+    <End Role="VehicleInsurancePolicy" Type="Self.VehicleInsurancePolicy" Multiplicity="0..1" />
+    <End Role="VehicleDetail" Type="Self.VehicleDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleInsurancePolicy">
+        <PropertyRef Name="VehicleInsurancePolicyID" />
+      </Principal>
+      <Dependent Role="VehicleDetail">
+        <PropertyRef Name="VehicleInsurancePolicyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleInsurancePolicy_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="VehicleInsurancePolicy" Type="Self.VehicleInsurancePolicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="VehicleInsurancePolicy">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MSTSModelStoreContainer">
+    <EntitySet Name="CostProfitCenter" EntityType="Self.CostProfitCenter" Schema="Accounting" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="Client" store:Type="Tables" />
+    <EntitySet Name="ClientBillingEntity" EntityType="Self.ClientBillingEntity" Schema="Client" store:Type="Tables" />
+    <EntitySet Name="ClientManagementUnit" EntityType="Self.ClientManagementUnit" Schema="Client" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="Client" store:Type="Tables" />
+    <EntitySet Name="ClientLocationAliasType" EntityType="Self.ClientLocationAliasType" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="CustomField" EntityType="Self.CustomField" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="CustomFieldSelectionList" EntityType="Self.CustomFieldSelectionList" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="CustomFieldType" EntityType="Self.CustomFieldType" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="ManagementEntity" EntityType="Self.ManagementEntity" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="ManagementUnit" EntityType="Self.ManagementUnit" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="ResourceType" EntityType="Self.ResourceType" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="RouteClassification" EntityType="Self.RouteClassification" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="Config" store:Type="Tables" />
+    <EntitySet Name="MobileUnit" EntityType="Self.MobileUnit" Schema="Equipment" store:Type="Tables" />
+    <EntitySet Name="VehicleDetail" EntityType="Self.VehicleDetail" Schema="Equipment" store:Type="Tables" />
+    <EntitySet Name="VehicleInsurancePolicy" EntityType="Self.VehicleInsurancePolicy" Schema="Equipment" store:Type="Tables" />
+    <EntitySet Name="ActionTrack" EntityType="Self.ActionTrack" Schema="Infrastructure" store:Type="Tables" />
+    <EntitySet Name="ApplicationTable" EntityType="Self.ApplicationTable" Schema="Infrastructure" store:Type="Tables" />
+    <EntitySet Name="ApplicationTableField" EntityType="Self.ApplicationTableField" Schema="Infrastructure" store:Type="Tables" />
+    <EntitySet Name="ChangeLog" EntityType="Self.ChangeLog" Schema="Infrastructure" store:Type="Tables" />
+    <EntitySet Name="ManagementEntityLevel" EntityType="Self.ManagementEntityLevel" Schema="Infrastructure" store:Type="Tables" />
+    <EntitySet Name="ClientAddress" EntityType="Self.ClientAddress" Schema="Location" store:Type="Tables" />
+    <EntitySet Name="ClientLocationAlias" EntityType="Self.ClientLocationAlias" Schema="Location" store:Type="Tables" />
+    <EntitySet Name="PhysicalLocation" EntityType="Self.PhysicalLocation" Schema="Location" store:Type="Tables" />
+    <EntitySet Name="Certification" EntityType="Self.Certification" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="CertificationStatus" EntityType="Self.CertificationStatus" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="Crew" EntityType="Self.Crew" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="CrewResource" EntityType="Self.CrewResource" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="CrewRole" EntityType="Self.CrewRole" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="DriverMobileAssignement" EntityType="Self.DriverMobileAssignement" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="DriverVehicle" EntityType="Self.DriverVehicle" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="HumanResource" EntityType="Self.HumanResource" Schema="Resource" store:Type="Tables" />
+    <EntitySet Name="RoutePlan" EntityType="Self.RoutePlan" Schema="Routing" store:Type="Tables" />
+    <EntitySet Name="RoutePlanFamily" EntityType="Self.RoutePlanFamily" Schema="Routing" store:Type="Tables" />
+    <EntitySet Name="RoutePlanResource" EntityType="Self.RoutePlanResource" Schema="Routing" store:Type="Tables" />
+    <EntitySet Name="CostComponentUnit" EntityType="Self.CostComponentUnit" Schema="Service" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="Service" store:Type="Tables" />
+    <EntitySet Name="ProductTask" EntityType="Self.ProductTask" Schema="Service" store:Type="Tables" />
+    <EntitySet Name="SurchargeDiscount" EntityType="Self.SurchargeDiscount" Schema="Service" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="Service" store:Type="Tables" />
+    <EntitySet Name="TaskCost" EntityType="Self.TaskCost" Schema="Service" store:Type="Tables" />
+    <AssociationSet Name="FK_ApplicationTableField_ApplicationTable" Association="Self.FK_ApplicationTableField_ApplicationTable">
+      <End Role="ApplicationTable" EntitySet="ApplicationTable" />
+      <End Role="ApplicationTableField" EntitySet="ApplicationTableField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CertificationStatus_Certification" Association="Self.FK_CertificationStatus_Certification">
+      <End Role="Certification" EntitySet="Certification" />
+      <End Role="CertificationStatus" EntitySet="CertificationStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CertificationStatus_HumanResource" Association="Self.FK_CertificationStatus_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResource" />
+      <End Role="CertificationStatus" EntitySet="CertificationStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChangeLog_ApplicationTableField" Association="Self.FK_ChangeLog_ApplicationTableField">
+      <End Role="ApplicationTableField" EntitySet="ApplicationTableField" />
+      <End Role="ChangeLog" EntitySet="ChangeLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientAddress_PhysicalLocation" Association="Self.FK_ClientAddress_PhysicalLocation">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocation" />
+      <End Role="ClientAddress" EntitySet="ClientAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientLocationAlias_ClientLocationAliasType" Association="Self.FK_ClientLocationAlias_ClientLocationAliasType">
+      <End Role="ClientLocationAliasType" EntitySet="ClientLocationAliasType" />
+      <End Role="ClientLocationAlias" EntitySet="ClientLocationAlias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientLocationAliasType_Client" Association="Self.FK_ClientLocationAliasType_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientLocationAliasType" EntitySet="ClientLocationAliasType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientManagementUnit_Client" Association="Self.FK_ClientManagementUnit_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientManagementUnit" EntitySet="ClientManagementUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientManagementUnit_ManagementUnit" Association="Self.FK_ClientManagementUnit_ManagementUnit">
+      <End Role="ManagementUnit" EntitySet="ManagementUnit" />
+      <End Role="ClientManagementUnit" EntitySet="ClientManagementUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_Crew" Association="Self.FK_CrewResource_Crew">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="CrewResource" EntitySet="CrewResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_CrewRole" Association="Self.FK_CrewResource_CrewRole">
+      <End Role="CrewRole" EntitySet="CrewRole" />
+      <End Role="CrewResource" EntitySet="CrewResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewResource_HumanResource" Association="Self.FK_CrewResource_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResource" />
+      <End Role="CrewResource" EntitySet="CrewResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomField_ApplicationTable" Association="Self.FK_CustomField_ApplicationTable">
+      <End Role="ApplicationTable" EntitySet="ApplicationTable" />
+      <End Role="CustomField" EntitySet="CustomField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomField_CustomFieldType" Association="Self.FK_CustomField_CustomFieldType">
+      <End Role="CustomFieldType" EntitySet="CustomFieldType" />
+      <End Role="CustomField" EntitySet="CustomField" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomFieldSelectionList_CustomField" Association="Self.FK_CustomFieldSelectionList_CustomField">
+      <End Role="CustomField" EntitySet="CustomField" />
+      <End Role="CustomFieldSelectionList" EntitySet="CustomFieldSelectionList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Driver_HumanResource" Association="Self.FK_Driver_HumanResource">
+      <End Role="HumanResource" EntitySet="HumanResource" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverMobileAssignement_Driver" Association="Self.FK_DriverMobileAssignement_Driver">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="DriverMobileAssignement" EntitySet="DriverMobileAssignement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverMobileAssignement_MobileUnit" Association="Self.FK_DriverMobileAssignement_MobileUnit">
+      <End Role="MobileUnit" EntitySet="MobileUnit" />
+      <End Role="DriverMobileAssignement" EntitySet="DriverMobileAssignement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverVehicle_Driver" Association="Self.FK_DriverVehicle_Driver">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="DriverVehicle" EntitySet="DriverVehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverVehicle_VehicleDetail" Association="Self.FK_DriverVehicle_VehicleDetail">
+      <End Role="VehicleDetail" EntitySet="VehicleDetail" />
+      <End Role="DriverVehicle" EntitySet="DriverVehicle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HumanResource_ResourceType" Association="Self.FK_HumanResource_ResourceType">
+      <End Role="ResourceType" EntitySet="ResourceType" />
+      <End Role="HumanResource" EntitySet="HumanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementEntity_ManagementEntityLevel" Association="Self.FK_ManagementEntity_ManagementEntityLevel">
+      <End Role="ManagementEntityLevel" EntitySet="ManagementEntityLevel" />
+      <End Role="ManagementEntity" EntitySet="ManagementEntity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementUnit_CostProfitCenter" Association="Self.FK_ManagementUnit_CostProfitCenter">
+      <End Role="CostProfitCenter" EntitySet="CostProfitCenter" />
+      <End Role="ManagementUnit" EntitySet="ManagementUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagementUnit_ManagementEntity" Association="Self.FK_ManagementUnit_ManagementEntity">
+      <End Role="ManagementEntity" EntitySet="ManagementEntity" />
+      <End Role="ManagementUnit" EntitySet="ManagementUnit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTask_Product" Association="Self.FK_ProductTask_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductTask" EntitySet="ProductTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTask_Task" Association="Self.FK_ProductTask_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="ProductTask" EntitySet="ProductTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_PhysicalLocation" Association="Self.FK_RoutePlan_PhysicalLocation">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocation" />
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_PhysicalLocation1" Association="Self.FK_RoutePlan_PhysicalLocation1">
+      <End Role="PhysicalLocation" EntitySet="PhysicalLocation" />
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_RouteClassification" Association="Self.FK_RoutePlan_RouteClassification">
+      <End Role="RouteClassification" EntitySet="RouteClassification" />
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_RoutePlanFamily" Association="Self.FK_RoutePlan_RoutePlanFamily">
+      <End Role="RoutePlanFamily" EntitySet="RoutePlanFamily" />
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlan_VehicleType" Association="Self.FK_RoutePlan_VehicleType">
+      <End Role="VehicleType" EntitySet="VehicleType" />
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_Crew" Association="Self.FK_RoutePlanResource_Crew">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewMon" Association="Self.FK_RoutePlanResource_CrewMon">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewSat" Association="Self.FK_RoutePlanResource_CrewSat">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewSun" Association="Self.FK_RoutePlanResource_CrewSun">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewThu" Association="Self.FK_RoutePlanResource_CrewThu">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewTue" Association="Self.FK_RoutePlanResource_CrewTue">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_CrewWed" Association="Self.FK_RoutePlanResource_CrewWed">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverFri" Association="Self.FK_RoutePlanResource_DriverFri">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverMon" Association="Self.FK_RoutePlanResource_DriverMon">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverSat" Association="Self.FK_RoutePlanResource_DriverSat">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverSun" Association="Self.FK_RoutePlanResource_DriverSun">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverThu" Association="Self.FK_RoutePlanResource_DriverThu">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverTue" Association="Self.FK_RoutePlanResource_DriverTue">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_DriverWed" Association="Self.FK_RoutePlanResource_DriverWed">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoutePlanResource_RoutePlan" Association="Self.FK_RoutePlanResource_RoutePlan">
+      <End Role="RoutePlan" EntitySet="RoutePlan" />
+      <End Role="RoutePlanResource" EntitySet="RoutePlanResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCost_CostComponentUnit" Association="Self.FK_TaskCost_CostComponentUnit">
+      <End Role="CostComponentUnit" EntitySet="CostComponentUnit" />
+      <End Role="TaskCost" EntitySet="TaskCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaskCost_Task" Association="Self.FK_TaskCost_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskCost" EntitySet="TaskCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleDetail_VehicleInsurancePolicy" Association="Self.FK_VehicleDetail_VehicleInsurancePolicy">
+      <End Role="VehicleInsurancePolicy" EntitySet="VehicleInsurancePolicy" />
+      <End Role="VehicleDetail" EntitySet="VehicleDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleInsurancePolicy_Driver" Association="Self.FK_VehicleInsurancePolicy_Driver">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="VehicleInsurancePolicy" EntitySet="VehicleInsurancePolicy" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

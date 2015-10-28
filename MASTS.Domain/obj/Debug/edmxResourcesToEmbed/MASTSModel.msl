@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MSTSModelStoreContainer" CdmEntityContainer="MSTSEntities">
+    <EntitySetMapping Name="CostProfitCenters">
+      <EntityTypeMapping TypeName="MSTSModel.CostProfitCenter">
+        <MappingFragment StoreEntitySet="CostProfitCenter">
+          <ScalarProperty Name="CostProfitCenterID" ColumnName="CostProfitCenterID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsCostCenter" ColumnName="IsCostCenter" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MSTSModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+          <ScalarProperty Name="ClientShortName" ColumnName="ClientShortName" />
+          <ScalarProperty Name="HeadQuartersAddress1" ColumnName="HeadQuartersAddress1" />
+          <ScalarProperty Name="HeadQuartersAddress2" ColumnName="HeadQuartersAddress2" />
+          <ScalarProperty Name="HeadQuartersCity" ColumnName="HeadQuartersCity" />
+          <ScalarProperty Name="HeadQuartersState" ColumnName="HeadQuartersState" />
+          <ScalarProperty Name="HeadQuartersZipCode" ColumnName="HeadQuartersZipCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientBillingEntities">
+      <EntityTypeMapping TypeName="MSTSModel.ClientBillingEntity">
+        <MappingFragment StoreEntitySet="ClientBillingEntity">
+          <ScalarProperty Name="ClientBillingEntityID" ColumnName="ClientBillingEntityID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ClientAccountNumber" ColumnName="ClientAccountNumber" />
+          <ScalarProperty Name="Attention" ColumnName="Attention" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientManagementUnits">
+      <EntityTypeMapping TypeName="MSTSModel.ClientManagementUnit">
+        <MappingFragment StoreEntitySet="ClientManagementUnit">
+          <ScalarProperty Name="ClientManagementUnitID" ColumnName="ClientManagementUnitID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ManagementUnitID" ColumnName="ManagementUnitID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="MSTSModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+          <ScalarProperty Name="ContactReferenceID" ColumnName="ContactReferenceID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="ContactRole" ColumnName="ContactRole" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientLocationAliasTypes">
+      <EntityTypeMapping TypeName="MSTSModel.ClientLocationAliasType">
+        <MappingFragment StoreEntitySet="ClientLocationAliasType">
+          <ScalarProperty Name="ClientLocationAliasTypeID" ColumnName="ClientLocationAliasTypeID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomFields">
+      <EntityTypeMapping TypeName="MSTSModel.CustomField">
+        <MappingFragment StoreEntitySet="CustomField">
+          <ScalarProperty Name="CustomFieldID" ColumnName="CustomFieldID" />
+          <ScalarProperty Name="CustomFieldTypeID" ColumnName="CustomFieldTypeID" />
+          <ScalarProperty Name="ApplicationTableID" ColumnName="ApplicationTableID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UILabel" ColumnName="UILabel" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="RangeMin" ColumnName="RangeMin" />
+          <ScalarProperty Name="RangeMax" ColumnName="RangeMax" />
+          <ScalarProperty Name="DateMin" ColumnName="DateMin" />
+          <ScalarProperty Name="DateMax" ColumnName="DateMax" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomFieldSelectionLists">
+      <EntityTypeMapping TypeName="MSTSModel.CustomFieldSelectionList">
+        <MappingFragment StoreEntitySet="CustomFieldSelectionList">
+          <ScalarProperty Name="CustomFieldSelectionListID" ColumnName="CustomFieldSelectionListID" />
+          <ScalarProperty Name="CustomFieldID" ColumnName="CustomFieldID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomFieldTypes">
+      <EntityTypeMapping TypeName="MSTSModel.CustomFieldType">
+        <MappingFragment StoreEntitySet="CustomFieldType">
+          <ScalarProperty Name="CustomFieldTypeID" ColumnName="CustomFieldTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagementUnits">
+      <EntityTypeMapping TypeName="MSTSModel.ManagementUnit">
+        <MappingFragment StoreEntitySet="ManagementUnit">
+          <ScalarProperty Name="ManagementUnitID" ColumnName="ManagementUnitID" />
+          <ScalarProperty Name="ManagementEntityID" ColumnName="ManagementEntityID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CostCenterID" ColumnName="CostCenterID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourceTypes">
+      <EntityTypeMapping TypeName="MSTSModel.ResourceType">
+        <MappingFragment StoreEntitySet="ResourceType">
+          <ScalarProperty Name="ResourceTypeID" ColumnName="ResourceTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RouteClassifications">
+      <EntityTypeMapping TypeName="MSTSModel.RouteClassification">
+        <MappingFragment StoreEntitySet="RouteClassification">
+          <ScalarProperty Name="RouteClassificationID" ColumnName="RouteClassificationID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MSTSModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="MSTSModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="MSTSModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleType">
+          <ScalarProperty Name="VehicleTypeID" ColumnName="VehicleTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MobileUnits">
+      <EntityTypeMapping TypeName="MSTSModel.MobileUnit">
+        <MappingFragment StoreEntitySet="MobileUnit">
+          <ScalarProperty Name="MobileUnitID" ColumnName="MobileUnitID" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="AccessNumber" ColumnName="AccessNumber" />
+          <ScalarProperty Name="IsPrivatelyOwned" ColumnName="IsPrivatelyOwned" />
+          <ScalarProperty Name="IsCellularCapable" ColumnName="IsCellularCapable" />
+          <ScalarProperty Name="IsScanCapable" ColumnName="IsScanCapable" />
+          <ScalarProperty Name="IsPhotoCapable" ColumnName="IsPhotoCapable" />
+          <ScalarProperty Name="IsSignatureCaptureCapable" ColumnName="IsSignatureCaptureCapable" />
+          <ScalarProperty Name="YearManufactured" ColumnName="YearManufactured" />
+          <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+          <ScalarProperty Name="IsDamaged" ColumnName="IsDamaged" />
+          <ScalarProperty Name="IsBeingRepaired" ColumnName="IsBeingRepaired" />
+          <ScalarProperty Name="IsUnderWarranty" ColumnName="IsUnderWarranty" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDetails">
+      <EntityTypeMapping TypeName="MSTSModel.VehicleDetail">
+        <MappingFragment StoreEntitySet="VehicleDetail">
+          <ScalarProperty Name="VehicleDetailID" ColumnName="VehicleDetailID" />
+          <ScalarProperty Name="VehicleInsurancePolicyID" ColumnName="VehicleInsurancePolicyID" />
+          <ScalarProperty Name="RegistrationState" ColumnName="RegistrationState" />
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="RegistrationExpiration" ColumnName="RegistrationExpiration" />
+          <ScalarProperty Name="IsYearRequired" ColumnName="IsYearRequired" />
+          <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
+          <ScalarProperty Name="IsMakeRequired" ColumnName="IsMakeRequired" />
+          <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+          <ScalarProperty Name="IsModelRequired" ColumnName="IsModelRequired" />
+          <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+          <ScalarProperty Name="IsTrimRequired" ColumnName="IsTrimRequired" />
+          <ScalarProperty Name="VehicleTrim" ColumnName="VehicleTrim" />
+          <ScalarProperty Name="IsMileageRequired" ColumnName="IsMileageRequired" />
+          <ScalarProperty Name="VehicleMileage" ColumnName="VehicleMileage" />
+          <ScalarProperty Name="IsVehiclePriority" ColumnName="IsVehiclePriority" />
+          <ScalarProperty Name="IsFreeFormDetailRequired" ColumnName="IsFreeFormDetailRequired" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleInsurancePolicies">
+      <EntityTypeMapping TypeName="MSTSModel.VehicleInsurancePolicy">
+        <MappingFragment StoreEntitySet="VehicleInsurancePolicy">
+          <ScalarProperty Name="VehicleInsurancePolicyID" ColumnName="VehicleInsurancePolicyID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="OriginalEffectiveCoverageDate" ColumnName="OriginalEffectiveCoverageDate" />
+          <ScalarProperty Name="CurrentCoverageExpirationDate" ColumnName="CurrentCoverageExpirationDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionTracks">
+      <EntityTypeMapping TypeName="MSTSModel.ActionTrack">
+        <MappingFragment StoreEntitySet="ActionTrack">
+          <ScalarProperty Name="ActionTrackID" ColumnName="ActionTrackID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ActionOccurred" ColumnName="ActionOccurred" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationTables">
+      <EntityTypeMapping TypeName="MSTSModel.ApplicationTable">
+        <MappingFragment StoreEntitySet="ApplicationTable">
+          <ScalarProperty Name="ApplicationTableID" ColumnName="ApplicationTableID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationTableFields">
+      <EntityTypeMapping TypeName="MSTSModel.ApplicationTableField">
+        <MappingFragment StoreEntitySet="ApplicationTableField">
+          <ScalarProperty Name="ApplicationTableFieldID" ColumnName="ApplicationTableFieldID" />
+          <ScalarProperty Name="ApplicationTableID" ColumnName="ApplicationTableID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="IsAudited" ColumnName="IsAudited" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChangeLogs">
+      <EntityTypeMapping TypeName="MSTSModel.ChangeLog">
+        <MappingFragment StoreEntitySet="ChangeLog">
+          <ScalarProperty Name="ChangeLogID" ColumnName="ChangeLogID" />
+          <ScalarProperty Name="ApplicationTableFieldID" ColumnName="ApplicationTableFieldID" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="BeforeValue" ColumnName="BeforeValue" />
+          <ScalarProperty Name="AfterValue" ColumnName="AfterValue" />
+          <ScalarProperty Name="ChangeMade" ColumnName="ChangeMade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientAddresses">
+      <EntityTypeMapping TypeName="MSTSModel.ClientAddress">
+        <MappingFragment StoreEntitySet="ClientAddress">
+          <ScalarProperty Name="ClientAddressID" ColumnName="ClientAddressID" />
+          <ScalarProperty Name="PhysicalLocationID" ColumnName="PhysicalLocationID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientLocationAlias">
+      <EntityTypeMapping TypeName="MSTSModel.ClientLocationAlia">
+        <MappingFragment StoreEntitySet="ClientLocationAlias">
+          <ScalarProperty Name="ClientLocationAliasID" ColumnName="ClientLocationAliasID" />
+          <ScalarProperty Name="ClientLocationAliasTypeID" ColumnName="ClientLocationAliasTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhysicalLocations">
+      <EntityTypeMapping TypeName="MSTSModel.PhysicalLocation">
+        <MappingFragment StoreEntitySet="PhysicalLocation">
+          <ScalarProperty Name="PhysicalLocationID" ColumnName="PhysicalLocationID" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="MapLocation" ColumnName="MapLocation" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certifications">
+      <EntityTypeMapping TypeName="MSTSModel.Certification">
+        <MappingFragment StoreEntitySet="Certification">
+          <ScalarProperty Name="CertificationID" ColumnName="CertificationID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CertificationStatus">
+      <EntityTypeMapping TypeName="MSTSModel.CertificationStatu">
+        <MappingFragment StoreEntitySet="CertificationStatus">
+          <ScalarProperty Name="CertificationStatusID" ColumnName="CertificationStatusID" />
+          <ScalarProperty Name="HumanResourceID" ColumnName="HumanResourceID" />
+          <ScalarProperty Name="CertificationID" ColumnName="CertificationID" />
+          <ScalarProperty Name="CertificationDate" ColumnName="CertificationDate" />
+          <ScalarProperty Name="AcceptableResult" ColumnName="AcceptableResult" />
+          <ScalarProperty Name="ResultDetail" ColumnName="ResultDetail" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Crews">
+      <EntityTypeMapping TypeName="MSTSModel.Crew">
+        <MappingFragment StoreEntitySet="Crew">
+          <ScalarProperty Name="CrewID" ColumnName="CrewID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewResources">
+      <EntityTypeMapping TypeName="MSTSModel.CrewResource">
+        <MappingFragment StoreEntitySet="CrewResource">
+          <ScalarProperty Name="CrewResourceID" ColumnName="CrewResourceID" />
+          <ScalarProperty Name="CrewID" ColumnName="CrewID" />
+          <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+          <ScalarProperty Name="CrewRoleID" ColumnName="CrewRoleID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewRoles">
+      <EntityTypeMapping TypeName="MSTSModel.CrewRole">
+        <MappingFragment StoreEntitySet="CrewRole">
+          <ScalarProperty Name="CrewRoleID" ColumnName="CrewRoleID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="MSTSModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="HumanResourceID" ColumnName="HumanResourceID" />
+          <ScalarProperty Name="LicenseState" ColumnName="LicenseState" />
+          <ScalarProperty Name="LicenseExpiration" ColumnName="LicenseExpiration" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverMobileAssignements">
+      <EntityTypeMapping TypeName="MSTSModel.DriverMobileAssignement">
+        <MappingFragment StoreEntitySet="DriverMobileAssignement">
+          <ScalarProperty Name="DriverMobileAssignementID" ColumnName="DriverMobileAssignementID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="MobileUnitID" ColumnName="MobileUnitID" />
+          <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+          <ScalarProperty Name="LeaseCostPerSettlementPeriod" ColumnName="LeaseCostPerSettlementPeriod" />
+          <ScalarProperty Name="LeasePaymentMaximum" ColumnName="LeasePaymentMaximum" />
+          <ScalarProperty Name="LeasePaymentCollected" ColumnName="LeasePaymentCollected" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverVehicles">
+      <EntityTypeMapping TypeName="MSTSModel.DriverVehicle">
+        <MappingFragment StoreEntitySet="DriverVehicle">
+          <ScalarProperty Name="DriverVehicleID" ColumnName="DriverVehicleID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="VehicleDetailID" ColumnName="VehicleDetailID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HumanResources">
+      <EntityTypeMapping TypeName="MSTSModel.HumanResource">
+        <MappingFragment StoreEntitySet="HumanResource">
+          <ScalarProperty Name="HumanResourceID" ColumnName="HumanResourceID" />
+          <ScalarProperty Name="ResourceSystemTypeID" ColumnName="ResourceSystemTypeID" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="ResourceIdentificationBadge" ColumnName="ResourceIdentificationBadge" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SocialSecurityNumber" ColumnName="SocialSecurityNumber" />
+          <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ResourceImage" ColumnName="ResourceImage" />
+          <ScalarProperty Name="ResourceImageType" ColumnName="ResourceImageType" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="MapLocation" ColumnName="MapLocation" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoutePlans">
+      <EntityTypeMapping TypeName="MSTSModel.RoutePlan">
+        <MappingFragment StoreEntitySet="RoutePlan">
+          <ScalarProperty Name="RoutePlanID" ColumnName="RoutePlanID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RoutePlanFamilyID" ColumnName="RoutePlanFamilyID" />
+          <ScalarProperty Name="RoutePlanState" ColumnName="RoutePlanState" />
+          <ScalarProperty Name="UTCOffset" ColumnName="UTCOffset" />
+          <ScalarProperty Name="IsScheduled" ColumnName="IsScheduled" />
+          <ScalarProperty Name="OriginationPhysicalLocationID" ColumnName="OriginationPhysicalLocationID" />
+          <ScalarProperty Name="EstimatedLocalStartTime" ColumnName="EstimatedLocalStartTime" />
+          <ScalarProperty Name="IsDriverCheckInRequired" ColumnName="IsDriverCheckInRequired" />
+          <ScalarProperty Name="DriverCheckInMinutesBeforeStartTime" ColumnName="DriverCheckInMinutesBeforeStartTime" />
+          <ScalarProperty Name="IsAbleToStartEarly" ColumnName="IsAbleToStartEarly" />
+          <ScalarProperty Name="EarliestStartTimeMinutes" ColumnName="EarliestStartTimeMinutes" />
+          <ScalarProperty Name="LateStartTimeThresholdInMinutes" ColumnName="LateStartTimeThresholdInMinutes" />
+          <ScalarProperty Name="IsFedByASN" ColumnName="IsFedByASN" />
+          <ScalarProperty Name="ASNCutoffTime" ColumnName="ASNCutoffTime" />
+          <ScalarProperty Name="TerminationPhysicalLocationID" ColumnName="TerminationPhysicalLocationID" />
+          <ScalarProperty Name="EstimatedLocalEndTime" ColumnName="EstimatedLocalEndTime" />
+          <ScalarProperty Name="EndTimeAdditionalDayCount" ColumnName="EndTimeAdditionalDayCount" />
+          <ScalarProperty Name="RequiredVehicleTypeID" ColumnName="RequiredVehicleTypeID" />
+          <ScalarProperty Name="RouteClassificationID" ColumnName="RouteClassificationID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoutePlanFamilies">
+      <EntityTypeMapping TypeName="MSTSModel.RoutePlanFamily">
+        <MappingFragment StoreEntitySet="RoutePlanFamily">
+          <ScalarProperty Name="RoutePlanFamilyID" ColumnName="RoutePlanFamilyID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoutePlanResources">
+      <EntityTypeMapping TypeName="MSTSModel.RoutePlanResource">
+        <MappingFragment StoreEntitySet="RoutePlanResource">
+          <ScalarProperty Name="RoutePlanResourceID" ColumnName="RoutePlanResourceID" />
+          <ScalarProperty Name="RoutePlanID" ColumnName="RoutePlanID" />
+          <ScalarProperty Name="IsCrewRoute" ColumnName="IsCrewRoute" />
+          <ScalarProperty Name="DriverIDSunday" ColumnName="DriverIDSunday" />
+          <ScalarProperty Name="DriverIDMonday" ColumnName="DriverIDMonday" />
+          <ScalarProperty Name="DriverIDTuesday" ColumnName="DriverIDTuesday" />
+          <ScalarProperty Name="DriverIDWednesday" ColumnName="DriverIDWednesday" />
+          <ScalarProperty Name="DriverIDThursday" ColumnName="DriverIDThursday" />
+          <ScalarProperty Name="DriverIDFriday" ColumnName="DriverIDFriday" />
+          <ScalarProperty Name="DriverIDSaturday" ColumnName="DriverIDSaturday" />
+          <ScalarProperty Name="CrewIDSunday" ColumnName="CrewIDSunday" />
+          <ScalarProperty Name="CrewIDMonday" ColumnName="CrewIDMonday" />
+          <ScalarProperty Name="CrewIDTuesday" ColumnName="CrewIDTuesday" />
+          <ScalarProperty Name="CrewIDWednesday" ColumnName="CrewIDWednesday" />
+          <ScalarProperty Name="CrewIDThursday" ColumnName="CrewIDThursday" />
+          <ScalarProperty Name="CrewIDFriday" ColumnName="CrewIDFriday" />
+          <ScalarProperty Name="CrewIDSaturday" ColumnName="CrewIDSaturday" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CostComponentUnits">
+      <EntityTypeMapping TypeName="MSTSModel.CostComponentUnit">
+        <MappingFragment StoreEntitySet="CostComponentUnit">
+          <ScalarProperty Name="CostComponentUnitID" ColumnName="CostComponentUnitID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CostToObtain" ColumnName="CostToObtain" />
+          <ScalarProperty Name="ChargeToCustomer" ColumnName="ChargeToCustomer" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="MSTSModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CalculatedCost" ColumnName="CalculatedCost" />
+          <ScalarProperty Name="OverrideCost" ColumnName="OverrideCost" />
+          <ScalarProperty Name="CalculatedCharge" ColumnName="CalculatedCharge" />
+          <ScalarProperty Name="OverrideCharge" ColumnName="OverrideCharge" />
+          <ScalarProperty Name="MaximumDiscount" ColumnName="MaximumDiscount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTasks">
+      <EntityTypeMapping TypeName="MSTSModel.ProductTask">
+        <MappingFragment StoreEntitySet="ProductTask">
+          <ScalarProperty Name="ProductTaskID" ColumnName="ProductTaskID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurchargeDiscounts">
+      <EntityTypeMapping TypeName="MSTSModel.SurchargeDiscount">
+        <MappingFragment StoreEntitySet="SurchargeDiscount">
+          <ScalarProperty Name="SurchargeDiscountID" ColumnName="SurchargeDiscountID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsSurcharge" ColumnName="IsSurcharge" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="MSTSModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CalculatedCost" ColumnName="CalculatedCost" />
+          <ScalarProperty Name="OverrideCost" ColumnName="OverrideCost" />
+          <ScalarProperty Name="CalculatedCharge" ColumnName="CalculatedCharge" />
+          <ScalarProperty Name="OverrideCharge" ColumnName="OverrideCharge" />
+          <ScalarProperty Name="MaximumDiscount" ColumnName="MaximumDiscount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskCosts">
+      <EntityTypeMapping TypeName="MSTSModel.TaskCost">
+        <MappingFragment StoreEntitySet="TaskCost">
+          <ScalarProperty Name="TaskCostID" ColumnName="TaskCostID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="CostComponentUnitID" ColumnName="CostComponentUnitID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagementEntities">
+      <EntityTypeMapping TypeName="MSTSModel.ManagementEntity">
+        <MappingFragment StoreEntitySet="ManagementEntity">
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CanContainManagementUnits" ColumnName="CanContainManagementUnits" />
+          <ScalarProperty Name="ParentManagementEntityID" ColumnName="ParentManagementEntityID" />
+          <ScalarProperty Name="ManagementEntityLevelID" ColumnName="ManagementEntityLevelID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ManagementEntityID" ColumnName="ManagementEntityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagementEntityLevels">
+      <EntityTypeMapping TypeName="MSTSModel.ManagementEntityLevel">
+        <MappingFragment StoreEntitySet="ManagementEntityLevel">
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="RecordAddedBy" ColumnName="RecordAddedBy" />
+          <ScalarProperty Name="RecordAdded" ColumnName="RecordAdded" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LevelNumber" ColumnName="LevelNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ManagementEntityLevelID" ColumnName="ManagementEntityLevelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\MASTS.Domain.dll.config
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\MASTS.Domain.dll
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\MASTS.Domain.pdb
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\obj\Debug\MASTS.Domain.dll
+C:\Users\Ed-DevPC\Documents\Visual Studio 2015\Projects\MASTS\MASTS.Domain\obj\Debug\MASTS.Domain.pdb
