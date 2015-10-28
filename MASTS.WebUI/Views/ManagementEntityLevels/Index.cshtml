@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MASTS.Domain.ViewModels.ManagementEntityLevelsViewModel>
+
+@{
+    ViewBag.Title = "Admin: Cost/Profit Centers";
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Sortable - Default functionality</title>
+    <link rel="stylesheet" href="..\..\Content\jquery-ui.css">
+    <script src="..\..\Scripts\jquery-1.11.3.js"></script>
+    <script src="..\..\Scripts\jquery-ui.js"></script>
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+            #sortable li {
+                margin: 0 3px 3px 3px;
+                padding: 0.4em;
+                padding-left: 1.5em;
+                font-size: 1.4em;
+                height: 18px;
+            }
+
+                #sortable li span {
+                    position: absolute;
+                    margin-left: -1.3em;
+                }
+    </style>
+    <script>
+        $(function () {
+            $("#sortable").disableSelection();
+            $("#sortable").sortable();
+            $("#checker").click(function () {
+                var myLabel = $("#result");
+                var listItems = $("#sortable li");
+                listItems.each(function (idx, li) {
+                    var product = $(li);
+                    myLabel.append(product.text());
+                    // and the rest of your code
+                });
+            }
+                );
+        });
+
+    </script>
+</head>
+<body>
+    <ul id="sortable">
+        @foreach (var item in Model)
+        {
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>@item.Description</li>
+        }
+    </ul>
+
+    <input id="checker" type="submit" value="CheckNow" />
+
+    <label id="result" />
+
+</body>
+</html>

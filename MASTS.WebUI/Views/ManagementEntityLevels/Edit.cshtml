@@ -1,0 +1,59 @@
+﻿@model MASTS.Domain.ManagementEntityLevel 
+
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Description;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.Description</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "ManagementEntityLevels",
+                                        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.ManagementEntityLevelID)
+            @Html.HiddenFor(m => m.IsDeleted)
+            @Html.HiddenFor(m => m.RecordAdded)
+            @Html.HiddenFor(m => m.RecordAddedBy)
+            @Html.HiddenFor(m => m.LastModified)
+            @Html.HiddenFor(m => m.LastModifiedBy)
+
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "ManagementEntityLevelID":
+                    case "IsDeleted":
+                    case "RecordAdded":
+                    case "RecordAddedBy":
+                    case "LastModified":
+                    case "LastModifiedBy":
+                    case "ManagementEntities":
+
+                        // do nothing
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+
+        </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new
+       {
+           @class = "btn btn-default"
+       })
+        </div>
+    }
+</div>

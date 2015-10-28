@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASTS.WebUI", "MASTS.WebUI\MASTS.WebUI.csproj", "{BF3D3387-1889-41DA-991E-57F4290493B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASTS.WebUI.Tests", "MASTS.WebUI.Tests\MASTS.WebUI.Tests.csproj", "{9220E1AE-68CB-419D-BCA0-16FDFDE62C53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MASTS.Domain", "MASTS.Domain\MASTS.Domain.csproj", "{E66EDE4E-350D-4B82-A8CA-A5A87D5BA59C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF3D3387-1889-41DA-991E-57F4290493B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3D3387-1889-41DA-991E-57F4290493B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3D3387-1889-41DA-991E-57F4290493B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF3D3387-1889-41DA-991E-57F4290493B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9220E1AE-68CB-419D-BCA0-16FDFDE62C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9220E1AE-68CB-419D-BCA0-16FDFDE62C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9220E1AE-68CB-419D-BCA0-16FDFDE62C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9220E1AE-68CB-419D-BCA0-16FDFDE62C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E66EDE4E-350D-4B82-A8CA-A5A87D5BA59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E66EDE4E-350D-4B82-A8CA-A5A87D5BA59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E66EDE4E-350D-4B82-A8CA-A5A87D5BA59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E66EDE4E-350D-4B82-A8CA-A5A87D5BA59C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

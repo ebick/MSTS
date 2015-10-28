@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - My ASP.NET Application</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/site.css" rel="stylesheet"/>
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Application name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/ApplicationTableAndFieldsViewModel">Application Tables And Fields</a></li>
+                    <li><a href="/ManagementEntityLevels">Management Entity Level</a></li>
+                    <li><a href="/ManagementEntities">Management Entity</a></li>
+                    <li><a href="/ManagementUnits">Management Unit</a></li>
+                    <li><a href="/CostProfitCentersViewModel">Cost/Profit Centers</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Sortable - Default functionality</title>
+    <link rel="stylesheet" href="..\..\Content\jquery-ui.css">
+    <script src="..\..\Scripts\jquery-1.11.3.js"></script>
+    <script src="..\..\Scripts\jquery-ui.js"></script>
+    <style>
+        #sortable {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 60%;
+        }
+
+            #sortable li {
+                margin: 0 3px 3px 3px;
+                padding: 0.4em;
+                padding-left: 1.5em;
+                font-size: 1.4em;
+                height: 18px;
+            }
+
+                #sortable li span {
+                    position: absolute;
+                    margin-left: -1.3em;
+                }
+    </style>
+    <script>
+    $(function() {
+    $( "#sortable" ).disableSelection();
+    $("#sortable").sortable();
+    $("#checker").click(function ()
+           {
+                var myLabel = $("#result");
+		var listItems = $("#sortable li");
+		listItems.each(function(idx, li) {
+		    var product = $(li);
+	            myLabel.append(product.text());
+		    // and the rest of your code
+		});           }
+        );
+});
+
+    </script>
+</head>
+<body>
+
+    <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+    </ul>
+
+    <input id="checker" type="submit" value="CheckNow" />
+
+    <label id="result" />
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"7cfa44f1f5474bf1902001fbdccad6f0"}
+</script>
+<script type="text/javascript" src="http://localhost:58770/8a9f6661dc39469d94c3f049327bc061/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>
+        <hr />
+        <footer>
+            <p>&copy; 2015 - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="/Scripts/jquery-1.11.3.js"></script>
+
+    <script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+
+    
+</body>
+</html>

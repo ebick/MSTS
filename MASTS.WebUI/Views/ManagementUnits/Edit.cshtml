@@ -1,0 +1,85 @@
+﻿@model MASTS.Domain.ManagementUnit 
+
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Description;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.Description</h3>
+    </div>
+
+    @using (Html.BeginForm("Edit", "ManagementUnits",
+                                                FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.ManagementUnitID)
+            @Html.HiddenFor(m => m.IsDeleted)
+            @Html.HiddenFor(m => m.RecordAdded)
+            @Html.HiddenFor(m => m.RecordAddedBy)
+            @Html.HiddenFor(m => m.LastModified)
+            @Html.HiddenFor(m => m.LastModifiedBy)
+
+            @*@Html.HiddenFor(m => m.CustomFields)
+                @Html.HiddenFor(m => m.ApplicationTableFields)*@
+
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "ManagementUnitID":
+                    case "IsDeleted":
+                    case "RecordAdded":
+                    case "RecordAddedBy":
+                    case "LastModified":
+                    case "LastModifiedBy":
+                    case "CostProfitCenter":
+                    case "ClientManagementUnits":
+                    case "ManagementEntity":
+
+
+                        // do nothing
+                        break;
+                    case "ManagementEntityID":
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ManagementEntityID, "ManagementEntityID", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("ManagementEntityID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ManagementEntityID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        break;
+                    case "CostCenterID":
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostCenterID, "CostCenterID", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("CostCenterID", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CostCenterID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+
+        </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return to List", "Index", null, new
+       {
+           @class = "btn btn-default"
+       })
+        </div>
+    }
+</div>

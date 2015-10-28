@@ -1,0 +1,74 @@
+﻿@model MASTS.Domain.ApplicationTableField
+@{
+    ViewBag.Title = "Admin: Edit " + @Model.Description;
+    ViewBag.ParentTableID = @Model.ApplicationTableID;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.Description</h3>
+    </div>
+
+    @using (Html.BeginForm("EditChild", "ApplicationTableAndFieldsViewModel",
+                                                        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.ApplicationTableFieldID )
+            @Html.HiddenFor(m => m.ApplicationTableID)
+            @Html.HiddenFor(m => m.RecordAdded)
+            @Html.HiddenFor(m => m.RecordAddedBy)
+
+
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "ApplicationTableFieldID":
+                    case "ApplicationTable":
+                    case "ChangeLogs":
+                    case "ApplicationTableID":
+                    case "IsDeleted":
+                    case "RecordAdded":
+                    case "RecordAddedBy":
+                    case "LastModified":
+                    case "LastModifiedBy":
+
+                        // do nothing
+                        break;
+                    case "FieldType":
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FieldType, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(model => model.FieldType, new SelectList(ViewBag.FieldTypeList, "Text", "Value"),"")
+                        </div>
+                        break;
+                    case "IsAudited":
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.IsAudited, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.IsAudited)
+                                    @Html.ValidationMessageFor(model => model.IsAudited, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+
+        </div>
+
+        <div class="panel-footer">
+            <input type="submit" value="SaveChild" class="btn btn-primary" />
+            @Html.ActionLink("Cancel and return ", "Edit", new { ViewBag.ParentTableID }, new  { @class = "btn btn-default" })
+        </div>
+    }
+</div>

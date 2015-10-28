@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MASTS.Domain.ViewModels.ApplicationTableAndFieldsViewModel>
+
+@{
+    ViewBag.Title = "Admin: Application Tables";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Application Tables And Fields</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">ID</th>
+                <th>Name</th>
+                <th>Field Count</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-right">@item.ParentTableID</td>
+                    <td>@Html.ActionLink(item.Description, "Edit", new { item.ParentTableID }) </td>
+                    <td>@item.ApplicationTableFields.Count.ToString()</td>
+                    @*<td class="text-center">
+                        @using (Html.BeginForm("Delete", "ApplicationTables"))
+                        {
+                            @Html.Hidden("ParentTableID", item.ParentTableID)
+                            <input id="InLineDelete" type="submit"
+                                   class="btn btn-default btn-xs"
+                                   value="Delete"
+                                   onClick="return confirmTheDelete()" />
+                        }
+                    </td>*@
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a new application table", "Create", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+
